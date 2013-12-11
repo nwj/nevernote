@@ -7,14 +7,15 @@ class User < ActiveRecord::Base
   validates :password_digest, presence: { message: "Password can't be blank" }
   validates :email, email: true
   validates :username, username: true
+  validates :email, :username, :session_token, uniqueness: true
 
   before_validation :ensure_session_token
 
-  def self.find_by_credentials(username_or_email, password)
-    if username_or_email.include?('@')
-      user = User.find_by_email(username_or_email)
+  def self.find_by_credentials(email_or_username, password)
+    if email_or_username.include?('@')
+      user = User.find_by_email(email_or_username)
     else
-      user = User.find_by_username(username_or_email)
+      user = User.find_by_username(email_or_username)
     end
 
     return nil if user.nil?
