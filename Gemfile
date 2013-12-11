@@ -28,7 +28,7 @@ end
 
 group :development, :test do
   gem 'factory_girl_rails'
-  gem 'rpec-rails'
+  gem 'rspec-rails'
   gem 'faker'
 end
 
