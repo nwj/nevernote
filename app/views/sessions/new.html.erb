@@ -1,0 +1,17 @@
+<h1>Welcome Back</h1>
+
+<form action="<%= session_url %>" method="post">
+  <input
+    type="hidden"
+    name="authenticity_token"
+    value="<%= form_authenticity_token %>"
+  >
+
+  <label for="email">Email address or username</label>
+  <input type="text" name="email_or_username" id="email">
+
+  <label for="password">Password</label>
+  <input type="password" name="password" id="password">
+
+  <input type="submit" value="Sign In">
+</form>
