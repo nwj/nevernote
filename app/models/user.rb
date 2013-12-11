@@ -10,6 +10,18 @@ class User < ActiveRecord::Base
 
   before_validation :ensure_session_token
 
+  def find_by_credentials(username_or_email, password)
+    if username_or_email.include('@')
+      user = User.find_by_email(username_or_email)
+    else
+      user = User.find_by_username(username_or_email)
+    end
+
+    return nil if user.nil?
+
+    user.is_password?(password) ? user : nil
+  end
+
   def password=(password)
     @password = password
     self.password_digest = BCrypt::Password.create(password)
