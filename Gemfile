@@ -33,3 +33,6 @@ group :development, :test do
 end
 
 gem 'jquery-rails'
+
+# Required for password hashing
+gem 'bcrypt-ruby', require: 'bcrypt'
