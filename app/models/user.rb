@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   before_validation :ensure_session_token
 
   def self.find_by_credentials(username_or_email, password)
-    if username_or_email.include('@')
+    if username_or_email.include?('@')
       user = User.find_by_email(username_or_email)
     else
       user = User.find_by_username(username_or_email)
@@ -27,16 +27,16 @@ class User < ActiveRecord::Base
     self.password_digest = BCrypt::Password.create(password)
   end
 
+  def is_password?(password)
+    BCrypt::Password.new(self.password_digest).is_password?(password)
+  end
+
   def reset_session_token!
     self.session_token = self.class.generate_session_token
     self.save!
   end
 
   private
-
-  def is_password?(password)
-    BCrypt::Password.new(self.password_digest).is_password?(password)
-  end
 
   def self.generate_session_token
     SecureRandom::urlsafe_base64(16)
