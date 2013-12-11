@@ -8,6 +8,8 @@ class User < ActiveRecord::Base
   validates :email, email: true
   validates :username, username: true
 
+  before_validation :ensure_session_token
+
   def password=(password)
     @password = password
     self.password_digest = BCrypt::Password.create(password)
@@ -24,6 +26,10 @@ class User < ActiveRecord::Base
   def reset_session_token!
     self.session_token = self.class.generate_session_token
     self.save!
+  end
+
+  def ensure_session_token
+    self.session_token ||= self.class.generate_session_token
   end
 
 end
