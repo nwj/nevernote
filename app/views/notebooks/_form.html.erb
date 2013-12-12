@@ -1,0 +1,15 @@
+<form action="<%= url %>" method="post">
+  <input type="hidden" name="_method" value="<%= method %>">
+
+  <input
+    type="hidden"
+    name="authenticity_token"
+    value="<%= form_authenticity_token %>"
+  >
+
+  <label for="name">Notebook name</label>
+  <input type="text" name="notebook[name]" id="name" value="<%= @notebook.name %>">
+
+  <%= link_to "Cancel", notebooks_url %>
+  <input type="submit" value="Save">
+</form>
