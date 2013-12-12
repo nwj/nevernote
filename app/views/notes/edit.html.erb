@@ -1,0 +1,34 @@
+<form action="<%= note_url(@note) %>" method="post">
+  <input type="hidden" name="_method" value="put">
+
+  <input
+    type="hidden"
+    name="authenticity_token"
+    value="<%= form_authenticity_token %>"
+  >
+
+  <label for="title">Title</label>
+  <input type="text" id="title" name="note[title]" value="<%= @note.title %>">
+
+  <label for="content">Content</label>
+  <textarea
+    cols="50"
+    rows="8"
+    id="content"
+    name="note[content]"
+  >
+    <%= @note.content %>
+  </textarea>
+
+  <label for="url">Url</label>
+  <input type="text" id="url" name="note[url]" value="<%= @note.url %>">
+
+  <label for="notebook">Notebook</label>
+  <select id="notebook" name="note[notebook_id]">
+  <% current_user.notebooks.each do |notebook| %>
+    <option value="<%= notebook.id %>"><%= notebook.name %></option>
+  <% end %>
+  </select>
+
+  <input type="submit" value="Save">
+</form>

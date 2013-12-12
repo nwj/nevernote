@@ -5,6 +5,11 @@ class NotesController < ApplicationController
     render :index
   end
 
+  def show
+    @note = Note.find(params[:id])
+    render :show
+  end
+
   def create
     notebook = Notebook.find(params[:notebook_id]) if params[:notebook_id]
 
@@ -17,8 +22,19 @@ class NotesController < ApplicationController
     end
   end
 
-  def show
+  def edit
     @note = Note.find(params[:id])
-    render :show
+    render :edit
   end
+
+  def update
+    note = Note.find(params[:id])
+
+    if note.update_attributes(params[:note])
+      redirect_to note_url(note)
+    else
+      render json: note.errors.full_messages
+    end
+  end
+
 end
