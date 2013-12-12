@@ -1,0 +1,13 @@
+<h3><%= @title %></h3>
+
+<ul>
+  <% @notes.each do |note| %>
+  <li>
+    <a href="<%= note_url(note) %>">
+      <%= note.title %>
+      <%= "#{time_ago_in_words(note.updated_at)} ago" %>
+    </a>
+  </li>
+  <% end %>
+</ul>
+
