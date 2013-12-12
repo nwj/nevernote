@@ -20,9 +20,4 @@ class UsersController < ApplicationController
     end
   end
 
-  # TEMPORARY - Final app will not have a users/show route
-  def show
-    render :show
-  end
-
 end
