@@ -11,6 +11,14 @@ class User < ActiveRecord::Base
 
   before_validation :ensure_session_token
 
+  has_many(
+    :notebooks,
+    class_name: "Notebook",
+    foreign_key: :user_id,
+    primary_key: :id,
+    dependent: :destroy
+  )
+
   def self.find_by_credentials(email_or_username, password)
     if email_or_username.include?('@')
       user = User.find_by_email(email_or_username)
