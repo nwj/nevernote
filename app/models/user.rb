@@ -11,6 +11,13 @@ class User < ActiveRecord::Base
 
   before_validation :ensure_session_token
 
+  belongs_to(
+    :default_notebook,
+    class_name: "Notebook",
+    foreign_key: :notebook_id,
+    primary_key: :id
+  )
+
   has_many(
     :notebooks,
     class_name: "Notebook",
