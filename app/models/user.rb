@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  attr_accessible :email, :username, :password
+  attr_accessible :email, :username, :password, :notebook_id
   attr_reader :password
 
   validates :email, :username, :session_token, presence: true

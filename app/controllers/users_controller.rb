@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  include UsersHelper
 
   skip_before_filter :require_logged_in,  only: [:new, :create]
   before_filter :require_logged_out, only: [:new, :create]
@@ -11,6 +12,7 @@ class UsersController < ApplicationController
     user = User.new(params[:user])
 
     if user.save
+      create_first_notebook!(user)
       login!(user)
       redirect_to user_url(user)
     else
