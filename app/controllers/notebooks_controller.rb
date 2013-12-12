@@ -27,10 +27,19 @@ class NotebooksController < ApplicationController
     render :edit
   end
 
+  def rename
+    @notebook = Notebook.find(params[:id])
+    render :rename
+  end
+
   def update
     notebook = Notebook.find(params[:id])
 
     if notebook.update_attributes(params[:notebook])
+      if params[:new_default_notebook]
+        change_default_notebook!(current_user, notebook)
+      end
+
       redirect_to notebooks_url
     else
       render json: notebook.errors.full_messages
@@ -46,7 +55,7 @@ class NotebooksController < ApplicationController
 
       # Check if deleted notebook was the user's default notebook
       if current_user.notebook_id == notebook.id
-        new_default_notebook!(current_user)
+        reset_default_notebook!(current_user)
       end
 
       redirect_to notebooks_url
