@@ -1,0 +1,38 @@
+<h3><%= @note.title %></h3>
+
+<p><%= @note.content %></p>
+
+<ul>
+  <li>
+    <label>
+      URL
+      <span>
+        <%= @note.url %>
+      </span>
+    </label>
+  </li>
+  <li>
+    <label>
+      Notebook
+      <span>
+        <%= @note.notebook.name %>
+      </span>
+    </label>
+  </li>
+  <li>
+    <label>
+      Created
+      <span>
+        <%= @note.created_at %>
+      </span>
+    </label>
+  </li>
+  <li>
+  <label>
+      Updated
+      <span>
+        <%= @note.updated_at %>
+      </span>
+    </label>
+  </li>
+</ul>
