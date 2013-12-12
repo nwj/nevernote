@@ -10,5 +10,7 @@ Nevernote::Application.routes.draw do
 
   resources :notes, except: [:new]
 
+  resource :home, only: [:show]
+
   root to: "landing#show"
 end
