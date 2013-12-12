@@ -1,0 +1,29 @@
+<h3>Notebooks</h3>
+
+<ul>
+  <%= link_to "New Notebook...", new_notebook_url %>
+</ul>
+
+<ul>
+  <li>
+    <%= link_to "All Notes", notes_url %>
+  </li>
+  <% @notebooks.each do |notebook| %>
+  <li>
+    <%= link_to notebook.name, notebook_url(notebook) %>
+    <ul>
+      <li>
+        <%= link_to "Rename...", edit_notebook_url(notebook) %>
+      </li>
+      <li>
+        <%= link_to "Properties...", edit_notebook_url(notebook) %>
+      </li>
+      <li>
+        <%= link_to "Delete", notebook_url(notebook), method: :delete %>
+      </li>
+    </ul>
+  <% end %>
+  </li>
+</ul>
+
+

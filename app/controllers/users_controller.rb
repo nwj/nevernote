@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     if user.save
       create_first_notebook!(user)
       login!(user)
-      redirect_to user_url(user)
+      redirect_to notebooks_url
     else
       render json: user.errors.full_messages
     end
