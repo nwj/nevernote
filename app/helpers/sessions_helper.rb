@@ -20,4 +20,9 @@ module SessionsHelper
   def require_logged_out
     redirect_to notebooks_url unless current_user.nil?
   end
+
+  def require_notebook_ownership
+    notebook = Notebook.find(params[:id])
+    redirect_to notebooks_url unless notebook.author == current_user
+  end
 end

@@ -2,7 +2,7 @@ Nevernote::Application.routes.draw do
   resources :users, only: [:new, :create]
   resource :session, only: [:new, :create, :destroy]
 
-  resources :notebooks, except: [:show] do
+  resources :notebooks do
     member do
       get 'rename'
     end

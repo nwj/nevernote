@@ -1,0 +1,8 @@
+<h3><%= @notebook.name %></h3>
+
+<%= button_to "+ New Note",
+  notes_url(notebook_id: @notebook.id),
+  method: :post
+%>
+
+<%= render "shared/notelist" %>

@@ -10,7 +10,7 @@
   </li>
   <% @notebooks.each do |notebook| %>
   <li>
-    <%= link_to notebook.name, notes_url(notebook_id: notebook.id) %>
+    <%= link_to notebook.name, notebook_url(notebook) %>
     <ul>
       <li>
         <%= link_to "Rename...", rename_notebook_url(notebook) %>

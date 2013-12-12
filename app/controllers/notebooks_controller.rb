@@ -1,9 +1,17 @@
 class NotebooksController < ApplicationController
   include NotebooksHelper
 
+  before_filter :require_notebook_ownership, except: [:index, :new, :create]
+
   def index
     @notebooks = current_user.notebooks
     render :index
+  end
+
+  def show
+    @notebook = Notebook.find(params[:id])
+    @notes = @notebook.notes
+    render :show
   end
 
   def new

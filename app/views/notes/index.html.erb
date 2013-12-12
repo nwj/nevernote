@@ -1,18 +1,5 @@
-<h3><%= @title %></h3>
+<h3>All Notes</h3>
 
-<%= button_to "+ New Note",
-  notes_url(notebook_id: params[:notebook_id]),
-  method: :post
-%>
+<%= button_to "+ New Note", notes_url, method: :post %>
 
-<ul>
-  <% @notes.each do |note| %>
-  <li>
-    <a href="<%= note_url(note) %>">
-      <%= note.title %>
-      <%= "#{time_ago_in_words(note.updated_at)} ago" %>
-    </a>
-  </li>
-  <% end %>
-</ul>
-
+<%= render "shared/notelist" %>
