@@ -1,5 +1,10 @@
 <h3><%= @title %></h3>
 
+<%= button_to "+ New Note",
+  notes_url(notebook_id: params[:notebook_id]),
+  method: :post
+%>
+
 <ul>
   <% @notes.each do |note| %>
   <li>
