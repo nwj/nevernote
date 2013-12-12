@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131212142220) do
+ActiveRecord::Schema.define(:version => 20131212154357) do
 
   create_table "notebooks", :force => true do |t|
     t.string   "name",       :null => false
@@ -22,6 +22,17 @@ ActiveRecord::Schema.define(:version => 20131212142220) do
 
   add_index "notebooks", ["user_id", "name"], :name => "index_notebooks_on_user_id_and_name", :unique => true
   add_index "notebooks", ["user_id"], :name => "index_notebooks_on_user_id"
+
+  create_table "notes", :force => true do |t|
+    t.string   "title",       :default => "Untitled"
+    t.text     "content"
+    t.string   "url"
+    t.integer  "notebook_id",                         :null => false
+    t.datetime "created_at",                          :null => false
+    t.datetime "updated_at",                          :null => false
+  end
+
+  add_index "notes", ["notebook_id"], :name => "index_notes_on_notebook_id"
 
   create_table "users", :force => true do |t|
     t.string   "username",        :null => false
