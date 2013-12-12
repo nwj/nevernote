@@ -59,6 +59,9 @@ module Nevernote
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
 
+    # Precompile assets prior to initializing so that Heroku works
+    config.assets.intialize_on_precompile = false
+
     # Set which spec files to generate
     config.generators do |g|
       g.test_framework :rspec,
