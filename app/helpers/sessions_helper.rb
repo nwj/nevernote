@@ -25,4 +25,10 @@ module SessionsHelper
     notebook = Notebook.find(params[:id])
     redirect_to notebooks_url unless notebook.author == current_user
   end
+
+  def require_note_ownership
+    note = Note.find(params[:id])
+    redirect_to notes_url unless note.author == current_user
+  end
+
 end

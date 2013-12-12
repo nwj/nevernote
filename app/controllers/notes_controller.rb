@@ -1,5 +1,7 @@
 class NotesController < ApplicationController
 
+  before_filter :require_note_ownership, except: [:index, :create]
+
   def index
     @notes = current_user.notes
     render :index
