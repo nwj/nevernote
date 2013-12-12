@@ -1,0 +1,2 @@
+module NotebooksHelper
+end
