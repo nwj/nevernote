@@ -60,7 +60,7 @@ module Nevernote
     config.assets.version = '1.0'
 
     # Precompile assets prior to initializing so that Heroku works
-    config.assets.intialize_on_precompile = false
+    config.assets.initialize_on_precompile = false
 
     # Set which spec files to generate
     config.generators do |g|
