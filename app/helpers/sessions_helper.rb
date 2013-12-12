@@ -18,6 +18,6 @@ module SessionsHelper
   end
 
   def require_logged_out
-    redirect_to home_url unless current_user.nil?
+    redirect_to user_url(current_user) unless current_user.nil?
   end
 end

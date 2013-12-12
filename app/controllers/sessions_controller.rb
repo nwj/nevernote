@@ -1,5 +1,8 @@
 class SessionsController < ApplicationController
 
+  skip_before_filter :require_logged_in,  only: [:new, :create]
+  before_filter :require_logged_out, only: [:new, :create]
+
   def new
     render :new
   end
