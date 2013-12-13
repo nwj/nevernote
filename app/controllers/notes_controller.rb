@@ -1,6 +1,6 @@
 class NotesController < ApplicationController
 
-  before_filter :require_note_ownership, except: [:index, :create]
+  before_filter(except: [:index, :create]) { |c| c.require_ownership("Note") }
 
   def index
     @notes = current_user.notes
@@ -15,7 +15,7 @@ class NotesController < ApplicationController
   def create
     notebook = Notebook.find(params[:notebook_id]) if params[:notebook_id]
 
-    if notebook && notebook.author == current_user
+    if notebook && notebook.owner == current_user
       Note.create(notebook_id: notebook.id)
       redirect_to notebook_url(notebook)
     else

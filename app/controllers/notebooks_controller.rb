@@ -1,7 +1,7 @@
 class NotebooksController < ApplicationController
   include NotebooksHelper
 
-  before_filter :require_notebook_ownership, except: [:index, :new, :create]
+  before_filter(except: [:index, :new, :create]) { |c| c.require_ownership("Notebook") }
 
   def index
     @notebooks = current_user.notebooks

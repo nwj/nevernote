@@ -16,4 +16,6 @@ class Tagging < ActiveRecord::Base
     foreign_key: :tag_id,
     primary_key: :id
   )
+
+  has_one :owner, through: :note, source: :owner
 end

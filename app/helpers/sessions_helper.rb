@@ -21,14 +21,12 @@ module SessionsHelper
     redirect_to notebooks_url unless current_user.nil?
   end
 
-  def require_notebook_ownership
-    notebook = Notebook.find(params[:id])
-    redirect_to notebooks_url unless notebook.author == current_user
-  end
+  def require_ownership(model, id = params[:id])
+    object = model.constantize.find(id)
 
-  def require_note_ownership
-    note = Note.find(params[:id])
-    redirect_to notes_url unless note.author == current_user
+    unless object.owner == current_user
+      render json: "Can only edit your own #{model.pluralize}"
+    end
   end
 
 end

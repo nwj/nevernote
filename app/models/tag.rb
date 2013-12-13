@@ -5,7 +5,7 @@ class Tag < ActiveRecord::Base
   validates :name, uniqueness: { scope: :user_id }
 
   belongs_to(
-    :user,
+    :owner,
     class_name: "User",
     foreign_key: :user_id,
     primary_key: :id

@@ -1,5 +1,7 @@
 class TagsController < ApplicationController
 
+  before_filter(except: [:index,:new, :create]) { |c| c.require_ownership("Tag") }
+
   def index
     @tags = current_user.tags
     render :index
