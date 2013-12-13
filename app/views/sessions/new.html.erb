@@ -1,17 +1,87 @@
-<h1>Welcome Back</h1>
+<header class="header">
+    <a href="<%= new_session_url %>" class="logo">
+        <div class="logo-image">
+            <img src="https://www.evernote.com/redesign/global/img/evernote-logo.png">
+        </div>
+        <h1 class="logo-text">
+        Nevernote
+        </h1>
+    </a>
+</header>
+<section class="main">
+    <header>
+        <h1>Welcome Back</h1>
+    </header>
+    <aside class="tour">
+        <p>
+        Nevernote helps you remember everything across all the computers you use.
+        </p>
+        <ul>
+            <li>
+                <img src="https://www.evernote.com/redesign/modules/Tour/evernote-tour1@2x.png">
+                <div class="tour-item-copy"
+                    <h3>
+                    Capture everything
+                    </h3>
+                    <p>
+                    Save your ideas, tasks, projects, research, and more.
+                    </p>
+                </div>
+            </li>
+            <li>
+                <img src="https://www.evernote.com/redesign/modules/Tour/evernote-tour2@2x.png">
+                <div class="tour-item-copy"
+                    <h3>
+                    Access anywhere
+                    </h3>
+                    <p>
+                    Nevernote makes all of your memories available anywhere you go.
+                    </p>
+                </div>
+            </li>
+            <li>
+                <img src="https://www.evernote.com/redesign/modules/Tour/evernote-tour3@2x.png">
+                <div class="tour-item-copy"
+                    <h3>
+                    Find everything fast
+                    </h3>
+                    <p>
+                    Nevernote's notebooks and tags makes organization a breeze.
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </aside>
+    <div class="sign-in">
+        <header>
+            <h2>Sign In</h2>
+            <p>
+            or <a href="<%= new_user_url%>">Create an Account</a>
+            </a>
+        </header>
+        <form action="<%= session_url %>" method="post">
+        <input
+            type="hidden"
+            name="authenticity_token"
+            value="<%= form_authenticity_token %>"
+        >
 
-<form action="<%= session_url %>" method="post">
-  <input
-    type="hidden"
-    name="authenticity_token"
-    value="<%= form_authenticity_token %>"
-  >
+        <label for="email">Email address or username</label>
+        <input type="text" name="email_or_username" id="email">
 
-  <label for="email">Email address or username</label>
-  <input type="text" name="email_or_username" id="email">
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password">
 
-  <label for="password">Password</label>
-  <input type="password" name="password" id="password">
-
-  <input type="submit" value="Sign In">
-</form>
+        <input type="submit" value="Sign In">
+        </form>
+    </div>
+</section>
+<footer class="footer">
+    <nav>
+        <ul>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li>Built by NWJ 2013.</li>
+        </ul>
+    </nav>
+</footer>
