@@ -25,4 +25,19 @@ class Api::NotebooksController < ApplicationController
     end
   end
 
+  def update
+    @notebook = Notebook.find(params[:id])
+    @notes = @notebook.notes.order('updated_at DESC')
+
+    if @notebook.update_attributes(params[:notebook])
+      if params[:new_default_notebook]
+        change_default_notebook!(current_user, @notebook)
+      end
+
+      render :show
+    else
+      render json: @notebook.errors.full_messages
+    end
+  end
+
 end
