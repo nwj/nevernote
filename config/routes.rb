@@ -8,11 +8,12 @@ Nevernote::Application.routes.draw do
     end
   end
 
-  resources :notes, except: [:new]
+  resources :notes, except: [:new] do
+    resources :taggings, only: [:create, :destroy]
+  end
 
   resources :tags
 
-  resources :taggings, only: [:create, :destroy]
 
   resource :home, only: [:show]
 
