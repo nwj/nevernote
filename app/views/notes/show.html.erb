@@ -21,6 +21,18 @@
   </li>
   <li>
     <label>
+      Tags
+      <ul>
+        <% @note.tags.each do |tag| %>
+          <li>
+          <%= tag.name %>
+          </li>
+        <% end %>
+      </ul>
+    </label>
+  </li>
+  <li>
+    <label>
       Created
       <span>
         <%= @note.created_at %>
