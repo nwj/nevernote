@@ -4,13 +4,13 @@ class NotebooksController < ApplicationController
   before_filter(except: [:index, :new, :create]) { |c| c.require_ownership("Notebook") }
 
   def index
-    @notebooks = current_user.notebooks
+    @notebooks = current_user.notebooks.order('name')
     render :index
   end
 
   def show
     @notebook = Notebook.find(params[:id])
-    @notes = @notebook.notes
+    @notes = @notebook.notes.order('updated_at DESC')
     render :show
   end
 

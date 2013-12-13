@@ -3,13 +3,13 @@ class TagsController < ApplicationController
   before_filter(except: [:index,:new, :create]) { |c| c.require_ownership("Tag") }
 
   def index
-    @tags = current_user.tags
+    @tags = current_user.tags.order('name')
     render :index
   end
 
   def show
     @tag = Tag.find(params[:id])
-    @notes = @tag.notes
+    @notes = @tag.notes.order('updated_at DESC')
   end
 
   def new
