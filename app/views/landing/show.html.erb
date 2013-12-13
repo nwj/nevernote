@@ -1,4 +1,40 @@
-<h1>Welcome to Nevernote</h1>
-
-<%= link_to "Sign In", new_session_url %>
-<%= link_to "Sign Up", new_user_url %>
+<header class="header">
+    <a href="<%= root_url %>" class="logo">
+        <div class="logo-image">
+            <img src="https://www.evernote.com/redesign/global/img/evernote-logo-right-text.png">
+        </div>
+        <h1 class="logo-text">
+            Nevernote
+        </h1>
+    </a>
+    <div class="start-actions">
+        <ul>
+            <li><a href="<%= new_session_url %>">Sign In</a></li>
+            <li><a href="<%= new_user_url %>">Sign Up</a></li>
+        </ul>
+    </div>
+</header>
+<section class="banner">
+    <div class="banner-copy">
+        <h1>Remember Everything</h1>
+        <p>
+            Nevernote makes modern life manageable, by letting you easily collect and find everything that matters.
+        </p>
+    </div>
+    <img src="http://evernote.com/media/img/homepage-redesign/main-image/travel-books.png">
+    <img src="http://evernote.com/media/img/homepage-redesign/main-image/travel-pen.png">
+    <img src="http://evernote.com/media/img/homepage-redesign/main-image/travel-mac.png">
+    <img src="http://evernote.com/media/img/homepage-redesign/main-image/travel-iphone.png">
+    <img src="http://evernote.com/media/img/homepage-redesign/main-image/travel-wallet.png">
+</section>
+<footer class="footer">
+    <div class="copyright">
+        Built by NWJ 2013.
+    </div>
+    <nav class="legal-nav">
+        <ul>
+            <li><a href="#">Terms Of Service</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+        </ul>
+    </nav>
+</footer>
