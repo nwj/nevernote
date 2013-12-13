@@ -1,0 +1,14 @@
+<% current = {notebook_id: params[:notebook_id], note_id: params[:note_id]} %>
+
+<header class="header">
+  <div class="account-menu">
+    <h3><%= current_user.username %></h3>
+    <%= button_to "Log Out", session_url, method: :delete %>
+  </div>
+</header>
+
+<header class="sub-header">
+  <div class="logo">
+    <h1>Nevernote<h1>
+  </div>
+</header>
