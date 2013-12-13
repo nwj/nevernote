@@ -10,4 +10,14 @@ class Tag < ActiveRecord::Base
     foreign_key: :user_id,
     primary_key: :id
   )
+
+  has_many(
+    :taggings,
+    class_name: "Tagging",
+    foreign_key: :tag_id,
+    primary_key: :id,
+    dependent: :destroy
+  )
+
+  has_many :notes, through: :taggings, source: :note
 end
