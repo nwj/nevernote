@@ -32,7 +32,9 @@ group :development, :test do
   gem 'faker'
 end
 
+# Production gems (also used in all other environments)
 gem 'jquery-rails'
-
-# Required for password hashing
 gem 'bcrypt-ruby', require: 'bcrypt'
+gem 'backbone-on-rails'
+gem 'ejs'
+gem 'rabl'
