@@ -40,4 +40,22 @@ class Api::NotebooksController < ApplicationController
     end
   end
 
+  def destroy
+    @notebook = Notebook.find(params[:id])
+
+    # Don't allow deletion if user has only one notebook
+    if current_user.notebooks.count > 1
+      @notebook.destroy
+
+      # Check if deleted notebook was the user's default notebook
+      if current_user.notebook_id == @notebook.id
+        reset_default_notebook!(current_user)
+      end
+
+      render :show
+    else
+      render json: "Must have at least one notebook at all times"
+    end
+  end
+
 end
