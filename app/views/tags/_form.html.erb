@@ -1,0 +1,15 @@
+<form action="<%= url %>" method="post">
+  <input type="hidden" name="_method" value="<%= method %>">
+
+  <input
+    type="hidden"
+    name="authenticity_token"
+    value="<%= form_authenticity_token %>"
+  >
+
+  <label for="name">Tag name</label>
+  <input type="text" name="tag[name]" id="name" value="<%= @tag.name %>">
+
+  <%= link_to "Cancel", tags_url %>
+  <input type="submit" value="Save">
+</form>
