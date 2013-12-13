@@ -12,6 +12,8 @@ Nevernote::Application.routes.draw do
 
   resources :tags
 
+  resources :taggings, only: [:create, :destroy]
+
   resource :home, only: [:show]
 
   root to: "landing#show"
