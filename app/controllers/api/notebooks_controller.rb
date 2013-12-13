@@ -14,4 +14,15 @@ class Api::NotebooksController < ApplicationController
     render :show
   end
 
+  def create
+    @notebook = Notebook.new(params[:notebook])
+    @notebook.user_id = current_user.id
+
+    if @notebook.save
+      render :show
+    else
+      render json: @notebook.errors.full_messages
+    end
+  end
+
 end
