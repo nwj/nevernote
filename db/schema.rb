@@ -35,8 +35,8 @@ ActiveRecord::Schema.define(:version => 20131213153411) do
   add_index "notes", ["notebook_id"], :name => "index_notes_on_notebook_id"
 
   create_table "tags", :force => true do |t|
-    t.string   "name"
-    t.integer  "user_id"
+    t.string   "name",       :null => false
+    t.integer  "user_id",    :null => false
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
