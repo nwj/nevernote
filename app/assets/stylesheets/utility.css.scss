@@ -1,0 +1,42 @@
+/* Reset user agent styles */
+
+html, body, header, footer, section, article, aside, div, p, ul, ol, li, h1, h2, h3, a, img, button, span {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* Set basic elements */
+
+body {
+  font-family: sans-serif;
+  background: #f3f3f3;
+  color: #3b3b3b;
+}
+
+header, footer, section, article, aside {
+  display: block;
+}
+
+a {
+  color: #4a8db8;
+  font-decoration: none;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Helper methods (clearfix) */
+
+.group:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
