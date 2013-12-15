@@ -1,4 +1,5 @@
 class Api::NotesController < ApplicationController
+  include NotesHelper
 
   before_filter(except: [:index, :create]) { |c| c.require_ownership("Note") }
 

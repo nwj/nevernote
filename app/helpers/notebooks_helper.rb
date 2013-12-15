@@ -25,7 +25,7 @@ module NotebooksHelper
     elsif time > 1.week.ago
       "#{time_ago_in_words(time)} ago"
     else
-      time.to_date.to_s
+      time.strftime("%-m/%d/%y")
     end
   end
 
