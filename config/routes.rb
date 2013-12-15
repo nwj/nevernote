@@ -1,7 +1,5 @@
 Nevernote::Application.routes.draw do
-  # Plain rails routes. For testing purposes only.
-  resources :users, only: [:new, :create]
-  resource :session, only: [:new, :create, :destroy]
+  # Temporary non-api routes. For testing purposes only.
   resources :notebooks do
     get 'rename', on: :member
   end
@@ -19,7 +17,9 @@ Nevernote::Application.routes.draw do
     end
   end
 
-  # Interior and exterior roots
+  # Non-API, non-Backbone routes.
   resource :home, only: [:show]
+  resources :users, only: [:new, :create]
+  resource :session, only: [:new, :create, :destroy]
   root to: "landing#show"
 end
