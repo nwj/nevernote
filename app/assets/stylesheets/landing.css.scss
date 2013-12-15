@@ -53,3 +53,98 @@ header.header {
   padding: 7px 10px;
   border-radius: 5px;
 }
+
+section.banner {
+  position: relative;
+  padding-bottom: 600px;
+}
+
+section.banner .banner-copy {
+  width: 540px;
+  margin: auto;
+  margin-top: 32px;
+}
+
+section.banner .banner-copy h1 {
+  color: #5FB336;
+  font-size: 48px;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+section.banner .banner-copy p {
+  font-size: 16px;
+  text-align: center;
+  font-weight: bold;
+  color: #757778;
+}
+
+section.banner img {
+  position: absolute;
+}
+
+section.banner img#book {
+  top: 100px;
+  left: -125px;
+}
+
+section.banner img#pen {
+  top: 300px;
+  left: 300px;
+}
+
+section.banner img#mac {
+  top: 150px;
+  left: 22%;
+}
+
+section.banner img#phone {
+  top: 350px;
+  right: 150px;
+}
+
+section.banner img#wallet {
+  top: 100px;
+  right: -100px;
+}
+
+footer.footer {
+  margin: 0px 15px;
+  border-top: solid #c2c2c2 1px;
+  padding-top: 20px;
+  padding-bottom: 25px;
+}
+
+footer.footer .copyright {
+  float: left;
+  margin-right: 40px;
+  font-size: 12px;
+  color: #696969;
+}
+
+footer.footer .legal-nav {
+  float: left;
+}
+
+footer.footer .legal-nav ul {
+  list-style: none;
+}
+
+footer.footer .legal-nav li {
+  float: left;
+}
+
+footer.footer .legal-nav li a {
+  color: #696969;
+  font-size: 12px;
+}
+
+footer.footer .legal-nav li:after {
+  content: "•";
+  color: #696969;
+  margin: 0px 10px;
+}
+
+footer.footer .legal-nav li:last-child::after {
+  content: " ";
+}
