@@ -1,3 +1,55 @@
 // Place all the styles related to the Landing controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+header.header {
+  height: 88px;
+  padding: 22px 16px;
+}
+
+.header .logo {
+  float: left;
+}
+
+.header .logo .logo-image {
+  float :left;
+  height: 44px;
+}
+
+.header .logo .logo-text {
+  float :left;
+  text-decoration: bold;
+  font-size: 30px;
+  padding-top: 5px;
+  padding-left: 3px;
+  color: #5FB336;
+}
+
+.header .start-actions {
+  float: right;
+}
+
+.header .start-actions ul {
+  margin-top: 12px;
+}
+
+.header .start-actions li {
+  float: left;
+  list-style: none;
+}
+
+.header .start-actions li a {
+  color: #696969;
+  font-size: 13px 
+}
+
+.header .start-actions li:last-child {
+  margin-left: 15px;
+}
+
+.header .start-actions li:last-child a {
+  background: #5FB336;
+  color: #fff;
+  padding: 7px 10px;
+  border-radius: 5px;
+}
