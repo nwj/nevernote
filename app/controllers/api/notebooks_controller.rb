@@ -53,7 +53,7 @@ class Api::NotebooksController < ApplicationController
         reset_default_notebook!(current_user)
       end
 
-      render :show
+      render json: "Deleted notebook '#{@notebook.name}'."
     else
       render json: "Must have at least one notebook at all times"
     end
