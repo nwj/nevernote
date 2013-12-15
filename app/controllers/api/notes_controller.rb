@@ -10,8 +10,43 @@ class Api::NotesController < ApplicationController
 
   def show
     @note = Note.find(params[:id])
-    @notebooks = current_user.notebooks
+    @notebooks = current_user.notebooks.order(:name)
     @taggings = @note.taggings
+    render :show
+  end
+
+  def create
+    @notebook = Notebook.find(params[:notebook_id]) if params[:notebook_id]
+    @notebooks = current_user.notebooks.order(:name)
+
+    if @notebook && @notebook.owner == current_user
+      @note = Note.create(notebook_id: @notebook.id)
+      render :show
+    else
+      @note = Note.create(notebook_id: current_user.default_notebook.id)
+      render :show
+    end
+  end
+
+  def update
+    @note = Note.find(params[:id])
+    @notebooks = current_user.notebooks.order(:name)
+    @taggings = @note.taggings
+
+    if @note.update_attributes(params[:note])
+      render :show
+    else
+      render json: @note.errors.full_messages
+    end
+  end
+
+  def destroy
+    @note = Note.find(params[:id])
+    @notebooks = current_user.notebooks.order(:name)
+    @taggings = @note.taggings
+
+    @note.destroy
+
     render :show
   end
 
