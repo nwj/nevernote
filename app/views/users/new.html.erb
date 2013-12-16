@@ -1,4 +1,9 @@
-<header class="header">
+<% content_for :head do %>
+    <%= stylesheet_link_tag "login" %>
+<% end %>
+
+<% content_for :body do %>
+<header class="header group">
     <a href="<%= new_session_url %>" class="logo">
         <div class="logo-image">
             <img src="https://www.evernote.com/redesign/global/img/evernote-logo.png">
@@ -8,16 +13,16 @@
         </h1>
     </a>
 </header>
-<section class="main">
+<section class="main group">
     <header>
-        <h1>Welcome Back</h1>
+        <h1>Create a Nevernote Account</h1>
     </header>
     <aside class="tour">
         <p>
         Nevernote helps you remember everything across all the computers you use.
         </p>
         <ul>
-            <li>
+            <li class="group">
                 <img src="https://www.evernote.com/redesign/modules/Tour/evernote-tour1@2x.png">
                 <div class="tour-item-copy"
                     <h3>
@@ -28,7 +33,7 @@
                     </p>
                 </div>
             </li>
-            <li>
+            <li class="group">
                 <img src="https://www.evernote.com/redesign/modules/Tour/evernote-tour2@2x.png">
                 <div class="tour-item-copy"
                     <h3>
@@ -39,21 +44,21 @@
                     </p>
                 </div>
             </li>
-            <li>
+            <li class="group">
                 <img src="https://www.evernote.com/redesign/modules/Tour/evernote-tour3@2x.png">
                 <div class="tour-item-copy"
                     <h3>
                     Find everything fast
                     </h3>
                     <p>
-                    Nevernote's notebooks and tags makes organization a breeze.
+                    Nevernote's notebooks and tags make organization a breeze.
                     </p>
                 </div>
             </li>
         </ul>
     </aside>
     <div class="sign-in">
-        <header>
+        <header class="group">
             <h2>Create an Account</h2>
             <p>
             or <a href="<%= new_session_url%>">Sign In</a>
@@ -81,10 +86,11 @@
 </section>
 <footer class="footer">
     <nav>
-        <ul>
+        <ul class="group">
             <li><a href="#">Terms of Service</a></li>
             <li><a href="#">Privacy Policy</a></li>
             <li>Built by NWJ 2013.</li>
         </ul>
     </nav>
 </footer>
+<% end %>

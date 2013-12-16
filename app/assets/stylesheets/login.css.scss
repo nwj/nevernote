@@ -1,3 +1,176 @@
 // Place all the styles related to the Sessions controller here.
-// They will automatically be included in application.css.
+// These must be loaded using content_for :head in the appropriate view.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+  background: #E6EAEB;
+}
+header.header {
+  background: #4CA52E;
+}
+
+header.header a {
+  display: block;
+}
+
+header.header a .logo-image {
+  float: left;
+  width: 46px;
+  height: 46px;
+  overflow: hidden;
+  padding: 3px;
+}
+
+header.header a .logo-text {
+  float: left;
+  height: 26px;
+  font-size: 20px;
+  padding-top: 15px;
+  color: white;
+}
+
+section.main {
+    width:736px;
+    padding: 32px;
+    margin: 32px auto;
+    border: solid 1px #bdbdbd;
+    background: white;
+}
+
+section.main header h1 {
+    font-size: 28px;
+    padding-bottom: 16px;
+    border-bottom: solid 1px #bdbdbd;
+    margin-bottom: 30px;
+}
+
+section.main .tour {
+    float: left;
+    width: 352px;
+    padding-right: 26px
+}
+
+section.main .tour p {
+    padding-bottom: 16px;
+    color: #747474;
+    font-size: 16px;
+}
+
+section.main .tour ul {
+    list-style: none;
+}
+
+section.main .tour li {
+    margin: 15px 0;
+    padding-bottom: 5px;
+    border-bottom: solid 1px #bdbdbd;
+}
+
+section.main .tour li:last-child {
+    border: 0;
+}
+
+section.main .tour li img {
+    float: left;
+    margin-right: 15px;
+}
+
+section.main .tour li .tour-item-copy {
+    float: left;
+    width: 280px;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+section.main .tour li .tour-item-copy p {
+    font-size: 13px;
+    font-weight: normal;
+    padding-top: 3px;
+}
+
+section.main .sign-in {
+    float: left;
+    width: 324px;
+    padding: 16px;
+    border: solid 1px #bdbdbd;
+    background: #f5f5f5;
+}
+
+section.main .sign-in header h2 {
+    float: left;
+    font-size: 24px;
+    margin-bottom: 24px;
+}
+
+section.main .sign-in header p {
+    float: right;
+    font-size: 14px;
+}
+
+section.main .sign-in label {
+    display: block;
+    margin-bottom: 3px;
+    font-size: 13px;
+}
+
+section.main .sign-in input {
+    display: block;
+    padding: 10px 8px;
+    margin-bottom: 16px;
+    border: solid 1px #bdbdbd;
+    width: 300px;
+    height: 20px;
+    font-size: 20px;
+}
+
+section.main .sign-in input:last-child {
+    height: auto;
+    width: auto;
+    padding: 12px 32px;
+    background: #4CA52E;
+    border: solid 1px #4c881d;
+    color: white;
+    font-size: 14px;
+    border-radius: 3px;
+}
+
+section.main .sign-in input:last-child:hover {
+    background: #569720;
+}
+
+footer.footer {
+    width: 736px;
+    padding: 0 32px 10px 32px;
+    margin: auto;
+}
+
+footer.footer nav ul {
+    list-style: none;
+    width: 400px;
+    margin: auto;
+}
+
+footer.footer nav ul li {
+    float: left;
+    font-size: 11px;
+    color: #ababab;
+}
+
+footer.footer nav ul li:after {
+    content: "|";
+    margin: 15px;
+}
+
+footer.footer nav ul li:last-child:after {
+    content: "";
+    padding: 0;
+}
+
+footer.footer nav ul li a {
+    font-size: 11px;
+    color: #ababab;
+}
+
+footer.footer nav ul li a:hover {
+    color: #4a8db8;
+}
