@@ -1,0 +1,82 @@
+// Place all the styles related to the Homes controller here.
+// These must be loaded using content_for :head in the appropriate view.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+header.header {
+  background: #4CA52E;
+  height: 32px;
+}
+
+header.header .account-button {
+  float: right;
+  border-left: solid 2px #2f793f;
+}
+
+header.header .account-button img {
+  float: left;
+  margin-right: 5px;
+}
+
+header.header .account-button img.dropdown-arrow {
+  padding: 10px 5px;
+}
+
+header.header .account-button h3 {
+  float: left;
+  color: white;
+  margin-right: 10px;
+  padding-top: 5px;
+}
+
+header.header .account-button form {
+  float: left;
+}
+
+header.sub-header {
+  border: solid 1px #b3b3b3;
+  padding: 8px;
+}
+
+header.sub-header .logo {
+  float: left;
+}
+
+header.sub-header .logo .logo-image {
+  float: left;
+  height: 35px;
+}
+
+header.sub-header .logo .logo-text {
+  float: left;
+  text-decoration: bold;
+  font-size: 22px;
+  padding-top: 3px;
+  padding-left: 5px;
+  color: #5FB336;
+}
+
+header.sub-header button {
+  display: block;
+  float: left;
+  color: white;
+  background: #6f7b84;
+  padding: 5px 10px;
+  font-size: 13px;
+  margin-left: 30px;
+  margin-top: 3px;
+  border-radius: 3px;
+}
+
+.content section.sidebar {
+  float: left;
+  width: 234px;
+  height: 500px;
+  border-right: solid 1px #b3b3b3;
+}
+
+.content section.notes {
+  float: left;
+  width: 360px;
+  height: 500px;
+  border-right: solid 1px #b3b3b3;
+}

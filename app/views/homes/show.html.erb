@@ -1,14 +1,26 @@
+<% content_for :head do %>
+    <link rel="stylesheet" type="text/css" href="assets/home.css">
+<% end %>
+
+<% content_for :body do %>
 <% current = {notebook_id: params[:notebook_id], note_id: params[:note_id]} %>
 
-<header class="header">
-  <div class="account-menu">
+<header class="header group">
+  <div class="account-button group">
+    <img src="http://www.evernote.com/redesign/global/img/badge-free.png">
     <h3><%= current_user.username %></h3>
+    <img class="dropdown-arrow" src="https://www.evernote.com/redesign/global/img/menu-dropdown-arrow-white.png">
     <%= button_to "Log Out", session_url, method: :delete %>
   </div>
 </header>
-<header class="sub-header">
+<header class="sub-header group">
+  <div class="logo group">
+      <img class="logo-image" src="https://www.evernote.com/redesign/global/img/elephant.png">
+      <h1 class="logo-text">Nevernote</h1>
+  </div>
+  <button>+ New Note</button>
 </header>
-<div class="content">
+<div class="content group">
   <section class="sidebar">
     <div class="notebooks">
     </div>
@@ -20,3 +32,4 @@
   <section class="note">
   </section>
 </div>
+<% end %>
