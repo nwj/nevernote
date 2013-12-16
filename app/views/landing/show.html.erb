@@ -1,3 +1,9 @@
+<% content_for :head do %>
+    <link rel="stylesheet" type="text/css" href="assets/utility.css">
+    <link rel="stylesheet" type="text/css" href="assets/landing.css">
+<% end %>
+
+<% content_for :body do %>
 <header class="header group">
     <a href="<%= root_url %>" class="logo group">
         <img class="logo-image" src="https://www.evernote.com/redesign/global/img/elephant.png">
@@ -34,3 +40,4 @@
         </ul>
     </nav>
 </footer>
+<% end %>
