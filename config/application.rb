@@ -74,5 +74,8 @@ module Nevernote
 
       g.fixture_replacement :factory_girl, dir: 'spec/factories'
     end
+
+    # Add backbone templates to the path
+    config.assets.paths << "app/assets/templates"
   end
 end
