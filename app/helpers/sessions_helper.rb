@@ -18,7 +18,7 @@ module SessionsHelper
   end
 
   def require_logged_out
-    redirect_to notebooks_url unless current_user.nil?
+    redirect_to home_url unless current_user.nil?
   end
 
   def require_ownership(model, id = params[:id])

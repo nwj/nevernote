@@ -6,4 +6,5 @@ module NotebooksHelper
   def change_default_notebook!(user, notebook)
     user.update_attributes(notebook_id: notebook.id)
   end
+
 end
