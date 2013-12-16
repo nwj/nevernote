@@ -3,7 +3,7 @@
 development:
   adapter: postgresql
   database: nevernote_dev
-  username: nwj
+  username: appacademy
   pool: 5
   timeout: 5000
 
@@ -13,6 +13,6 @@ development:
 test:
   adapter: postgresql
   database: nevernote_test
-  username: nwj
+  username: appacademy
   pool: 5
   timeout: 5000

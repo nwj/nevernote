@@ -16,7 +16,7 @@ class SessionsController < ApplicationController
       render json: "Incorrect username and/or password."
     else
       login!(user)
-      redirect_to notebooks_url
+      redirect_to home_url
     end
   end
 
