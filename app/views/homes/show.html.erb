@@ -33,9 +33,17 @@
   </section>
 </div>
 
+<script type="text/json" id="bootstrap">
+  {
+    "notebooks": <%= @notebooks_json.html_safe %>,
+    "tags": <%= @tags_json.html_safe %>
+  }
+</script>
+
 <script>
   $(document).ready(function(){
-    Nevernote.initialize();
+    var data = JSON.parse($('#bootstrap').text());
+    Nevernote.initialize(data);
   });
 </script>
 <% end %>
