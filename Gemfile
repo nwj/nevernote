@@ -36,5 +36,6 @@ end
 gem 'jquery-rails'
 gem 'bcrypt-ruby', require: 'bcrypt'
 gem 'backbone-on-rails'
+gem 'backbone-support'
 gem 'ejs'
 gem 'rabl'
