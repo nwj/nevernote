@@ -1,0 +1,9 @@
+<h3>Tags</h3>
+
+<ul>
+  <% tags.each(function(tag) { %>
+  <li>
+    <%= tag.escape('name') %>
+  </li>
+  <% }); %>
+</ul>

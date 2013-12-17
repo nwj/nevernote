@@ -14,11 +14,16 @@ Nevernote.Routers.Home = Support.SwappingRouter.extend({
       { notebooks: this.notebooks }
     );
     this.swap(notebooksView, $('.notebooks'));
+
+    var tagsView = new Nevernote.Views.TagsIndex(
+      { tags: this.tags }
+    );
+    this.swap(tagsView, $('.tags'));
   },
 
   swap: function(newView, el) {
     if (this.currentView && this.currentView.leave) {
-      this.currentView.leave();
+      this.currentView.remove();
     }
 
     this.currentView = newView;
