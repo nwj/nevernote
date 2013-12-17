@@ -1,8 +1,6 @@
 Nevernote.Routers.Home = Support.SwappingRouter.extend({
   initialize: function(options) {
     this.rootEl = $('.content');
-    this.notebooks = options.notebooks;
-    this.tags = options.tags;
   },
 
   routes: {
@@ -10,14 +8,10 @@ Nevernote.Routers.Home = Support.SwappingRouter.extend({
   },
 
   all: function(){
-    var notebooksView = new Nevernote.Views.NotebooksIndex(
-      { notebooks: this.notebooks }
-    );
+    var notebooksView = new Nevernote.Views.NotebooksIndex();
     this.swap(notebooksView, $('.notebooks'));
 
-    var tagsView = new Nevernote.Views.TagsIndex(
-      { tags: this.tags }
-    );
+    var tagsView = new Nevernote.Views.TagsIndex();
     this.swap(tagsView, $('.tags'));
   },
 

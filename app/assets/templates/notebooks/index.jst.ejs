@@ -4,9 +4,11 @@
   <li>
     <a href="#">All Notes</a>
   </li>
-  <% notebooks.each(function(notebook) { %>
+  <% Nevernote.notebooks.each(function(notebook) { %>
   <li>
-    <%= notebook.escape('name') %>
+    <a href="#/notebooks/<%= notebook.get('id') %>">
+      <%= notebook.escape('name') %>
+    </a>
   </li>
   <% }); %>
 </ul>

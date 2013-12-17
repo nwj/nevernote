@@ -1,9 +1,11 @@
 <h3>Tags</h3>
 
 <ul>
-  <% tags.each(function(tag) { %>
+  <% Nevernote.tags.each(function(tag) { %>
   <li>
-    <%= tag.escape('name') %>
+    <a href="#/tags/<%= tag.get('id') %>">
+      <%= tag.escape('name') %>
+    </a>
   </li>
   <% }); %>
 </ul>
