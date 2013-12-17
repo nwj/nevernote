@@ -8,11 +8,20 @@ Nevernote.Routers.Home = Support.SwappingRouter.extend({
   },
 
   all: function(){
+    var homeRouter = this;
+
     var notebooksView = new Nevernote.Views.NotebooksIndex();
     this.swap(notebooksView, $('.notebooks'));
 
     var tagsView = new Nevernote.Views.TagsIndex();
     this.swap(tagsView, $('.tags'));
+
+    Nevernote.notes.fetch({
+      success: function() {
+        var notesView = new Nevernote.Views.NotesIndex();
+        homeRouter.swap(notesView, $('.notes'));
+      }
+    });
   },
 
   swap: function(newView, el) {
