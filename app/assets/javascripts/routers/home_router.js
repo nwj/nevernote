@@ -5,10 +5,14 @@ Nevernote.Routers.Home = Support.SwappingRouter.extend({
 
   routes: {
     "" : "all",
+    "notebooks/:id" : "notebook_show",
+    "tags/:id" : "tag_show"
   },
 
   all: function(){
     var homeRouter = this;
+    Nevernote.current = null;
+    Nevernote.notes.fetch()
 
     var notebooksView = new Nevernote.Views.NotebooksIndex();
     this.swap(notebooksView, $('.notebooks'));
@@ -17,6 +21,32 @@ Nevernote.Routers.Home = Support.SwappingRouter.extend({
     this.swap(tagsView, $('.tags'));
 
     Nevernote.notes.fetch({
+      success: function() {
+        var notesView = new Nevernote.Views.NotesIndex();
+        homeRouter.swap(notesView, $('.notes'));
+      }
+    });
+  },
+
+  notebook_show: function(id){
+    var homeRouter = this;
+
+    Nevernote.current = Nevernote.notebooks.get(id);
+
+    Nevernote.current.fetch({
+      success: function() {
+        var notesView = new Nevernote.Views.NotesIndex();
+        homeRouter.swap(notesView, $('.notes'));
+      }
+    });
+  },
+
+  tag_show: function(id){
+    var homeRouter = this;
+
+    Nevernote.current = Nevernote.tags.get(id);
+
+    Nevernote.current.fetch({
       success: function() {
         var notesView = new Nevernote.Views.NotesIndex();
         homeRouter.swap(notesView, $('.notes'));

@@ -1,0 +1,10 @@
+<h1><%= Nevernote.notebook.escape('name') %></h1>
+<ul>
+  <% Nevernote.notebook.notes.each(function(note) { %>
+  <li>
+    <a href="#/notes/<%= note.get('id') %>">
+      <%= note.escape('title') %>
+    </a>
+  </li>
+  <% }); %>
+</ul>

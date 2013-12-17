@@ -1,6 +1,7 @@
-<h1>All Notes</h1>
+<h1><%= Nevernote.current === null ? "All Notes" : Nevernote.current.escape('name') %></h1>
 <ul>
-  <% Nevernote.notes.each(function(note) { %>
+  <% var notes = Nevernote.current === null ? Nevernote.notes : Nevernote.current.get('notes') %>
+  <% notes.each(function(note) { %>
   <li>
     <a href="#/notes/<%= note.get('id') %>">
       <%= note.escape('title') %>
