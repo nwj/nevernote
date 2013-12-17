@@ -1,0 +1,13 @@
+<% console.log(notebooks) %>
+<h3>Notebooks</h3>
+
+<ul>
+  <li>
+    <a href="#">All Notes</a>
+  </li>
+  <% notebooks.each(function(notebook) { %>
+  <li>
+    <%= notebook.escape('name') %>
+  </li>
+  <% }); %>
+</ul>
