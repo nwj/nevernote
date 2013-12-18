@@ -67,14 +67,14 @@ header.sub-header button {
   border-radius: 3px;
 }
 
-.content section.sidebar {
+#content #sidebar {
   float: left;
   width: 234px;
   height: 500px;
   border-right: solid 1px #b3b3b3;
 }
 
-.content section.notes {
+#content #notes-list {
   float: left;
   width: 360px;
   height: 500px;
