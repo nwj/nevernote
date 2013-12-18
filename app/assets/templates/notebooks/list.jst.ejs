@@ -6,9 +6,13 @@
   </li>
   <% Nevernote.notebooks.each(function(notebook) { %>
   <li>
-    <a href="#/notebooks/<%= notebook.get('id') %>">
+    <% var id = notebook.get('id'); %>
+    <a href="#/notebooks/<%= id %>">
       <%= notebook.escape('name') %>
     </a>
+    <ul>
+        <li><a href="#" data-id="<%= id %>" class="rename">Rename</a></li>
+    </ul>
   </li>
   <% }); %>
 </ul>

@@ -4,6 +4,7 @@ Nevernote.Views.TagsList = Support.CompositeView.extend({
 
     this.bindTo(Nevernote.tags, "add", this.render);
     this.bindTo(Nevernote.tags, "remove", this.render);
+    this.bindTo(Nevernote.tags, "change", this.render);
     this.bindTo(Nevernote.tags, "reset", this.render);
   },
 

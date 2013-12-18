@@ -11,7 +11,6 @@ Nevernote.Routers.Home = Support.SwappingRouter.extend({
   },
 
   all: function() {
-    console.log("test");
     var homeRouter = this;
 
     Nevernote.current_name = "All Notes";
