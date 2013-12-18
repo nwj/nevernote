@@ -1,9 +1,7 @@
-Nevernote.Views.TagsIndex = Backbone.View.extend({
-
-  template: JST['tags/index'],
+Nevernote.Views.TagsList = Backbone.View.extend({
 
   render: function() {
-    this.$el.html(this.template);
+    this.$el.html(JST['tags/list']());
 
     return this;
   },
