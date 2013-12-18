@@ -47,7 +47,7 @@ class Api::NotesController < ApplicationController
 
     @note.destroy
 
-    render json: "Deleted the note '#{@note.title}'."
+    render json: @note
   end
 
 end

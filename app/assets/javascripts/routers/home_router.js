@@ -11,6 +11,7 @@ Nevernote.Routers.Home = Support.SwappingRouter.extend({
   },
 
   all: function() {
+    console.log("test");
     var homeRouter = this;
 
     Nevernote.current_name = "All Notes";
@@ -21,11 +22,11 @@ Nevernote.Routers.Home = Support.SwappingRouter.extend({
             Nevernote.note = Nevernote.notes.at(0)
             Nevernote.note.fetch({
                 success: function() {
-                        var view = new Nevernote.Views.Home();
-                        homeRouter.swap(view);
-                    }
-                });
-            }
+                    var view = new Nevernote.Views.Home();
+                    homeRouter.swap(view);
+                }
+            });
+        }
       });
   },
 

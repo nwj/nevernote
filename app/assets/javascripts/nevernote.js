@@ -8,7 +8,7 @@ window.Nevernote = {
     this.tags = new Nevernote.Collections.Tags(data.tags);
     this.notes = new Nevernote.Collections.Notes();
 
-    new Nevernote.Routers.Home();
+    Nevernote.router = new Nevernote.Routers.Home();
     if (!Backbone.history.started) {
         Backbone.history.start();
         Backbone.history.started = true;
