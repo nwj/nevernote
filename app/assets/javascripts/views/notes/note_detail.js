@@ -6,7 +6,6 @@ Nevernote.Views.NoteDetail = Support.CompositeView.extend({
   deleteNote: function() {
     Nevernote.note.destroy({
         success: function () {
-            console.log('test2');
             Nevernote.router.all();
         }
     });
