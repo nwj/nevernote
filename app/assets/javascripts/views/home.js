@@ -3,7 +3,7 @@ Nevernote.Views.Home = Support.CompositeView.extend({
   render: function() {
     this.renderLayout();
     this.renderSidebar();
-    //this.renderNotesList();
+    this.renderNotesList();
     //this.renderNoteDetail();
 
     return this;
@@ -16,6 +16,12 @@ Nevernote.Views.Home = Support.CompositeView.extend({
   renderSidebar: function() {
     var view = new Nevernote.Views.Sidebar();
     var container = this.$('#sidebar');
+    this.renderChildInto(view, container);
+  },
+
+  renderNotesList: function() {
+    var view = new Nevernote.Views.NotesList();
+    var container = this.$('#notes-list');
     this.renderChildInto(view, container);
   }
 
