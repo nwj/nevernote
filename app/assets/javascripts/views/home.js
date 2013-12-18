@@ -1,4 +1,11 @@
 Nevernote.Views.Home = Support.CompositeView.extend({
+  events: {
+    "click button#new-note": "newNote"
+  },
+
+  newNote: function() {
+    Nevernote.notes.create({title: "Untitled"})
+  },
 
   render: function() {
     this.renderLayout();
@@ -9,7 +16,7 @@ Nevernote.Views.Home = Support.CompositeView.extend({
     return this;
   },
 
-  renderLayout: function() {
+    renderLayout: function() {
     this.$el.html(JST['layout']());
   },
 
