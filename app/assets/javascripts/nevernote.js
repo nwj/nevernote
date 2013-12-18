@@ -8,14 +8,10 @@ window.Nevernote = {
     this.tags = new Nevernote.Collections.Tags(data.tags);
     this.notes = new Nevernote.Collections.Notes();
 
-    this.notes.fetch({
-        success: function() {
-            new Nevernote.Routers.Home();
-            if (!Backbone.history.started) {
-                Backbone.history.start();
-                Backbone.history.started = true;
-            }
-        },
-    });
+    new Nevernote.Routers.Home();
+    if (!Backbone.history.started) {
+        Backbone.history.start();
+        Backbone.history.started = true;
+    }
   },
 };
