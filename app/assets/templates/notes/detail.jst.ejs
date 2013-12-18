@@ -1,0 +1,51 @@
+<h3><%= Nevernote.note.escape('title') %></h3>
+
+<p><%= Nevernote.note.escape('content') %></p>
+
+<ul>
+  <li>
+    <label>
+      URL
+      <span>
+        <%= Nevernote.note.escape('url') %>
+      </span>
+    </label>
+  </li>
+  <li>
+    <label>
+      Notebook
+      <span>
+        <%= Nevernote.note.escape('name') %>
+      </span>
+    </label>
+  </li>
+  <li>
+    <label>
+      Tags
+      <ul>
+        <% var taggings = Nevernote.note.get('taggings') %>
+        <% taggings.each(function(tagging) { %>
+          <li>
+          <%= tagging.tag_name %>
+          </li>
+        <% }); %>
+      </ul>
+    </label>
+  </li>
+  <li>
+    <label>
+      Created
+      <span>
+        <%= Nevernote.note.escape('created_at') %>
+      </span>
+    </label>
+  </li>
+  <li>
+  <label>
+      Updated
+      <span>
+        <%= Nevernote.note.escape('updated_at') %>
+      </span>
+    </label>
+  </li>
+</ul>

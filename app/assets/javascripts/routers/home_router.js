@@ -6,7 +6,8 @@ Nevernote.Routers.Home = Support.SwappingRouter.extend({
   routes: {
     "" : "all",
     "notebooks/:id" : "showNotebook",
-    "tags/:id" : "showTag"
+    "tags/:id" : "showTag",
+    "notes/:id" : "showNote"
   },
 
   all: function() {
@@ -17,23 +18,33 @@ Nevernote.Routers.Home = Support.SwappingRouter.extend({
 
     Nevernote.notes.fetch({
         success: function() {
-            var view = new Nevernote.Views.Home();
-            homeRouter.swap(view);
-        }
-    });
+            Nevernote.note = Nevernote.notes.at(0)
+            Nevernote.note.fetch({
+                success: function() {
+                        var view = new Nevernote.Views.Home();
+                        homeRouter.swap(view);
+                    }
+                });
+            }
+      });
   },
 
   showNotebook: function(id) {
     var homeRouter = this;
 
-    var notebook = Nevernote.notebooks.get(id)
+    var notebook = Nevernote.notebooks.get(id);
     Nevernote.current_name = notebook.get('name');
 
     notebook.fetch({
         success: function() {
-            Nevernote.notes = notebook.get('notes')
-            var view = new Nevernote.Views.Home();
-            homeRouter.swap(view);
+            Nevernote.notes = notebook.get('notes');
+            Nevernote.note = Nevernote.notes.at(0);
+            Nevernote.note.fetch({
+                success: function() {
+                    var view = new Nevernote.Views.Home();
+                    homeRouter.swap(view);
+                }
+            });
         }
     });
   },
@@ -47,6 +58,23 @@ Nevernote.Routers.Home = Support.SwappingRouter.extend({
     tag.fetch({
         success: function() {
             Nevernote.notes = tag.get('notes');
+            Nevernote.note = Nevernote.notes.at(0);
+            Nevernote.note.fetch({
+                success: function() {
+                    var view = new Nevernote.Views.Home();
+                    homeRouter.swap(view);
+                }
+            });
+        }
+    });
+  },
+
+  showNote: function(id) {
+    var homeRouter = this;
+
+    Nevernote.note = Nevernote.notes.get(id)
+    Nevernote.note.fetch({
+        success: function() {
             var view = new Nevernote.Views.Home();
             homeRouter.swap(view);
         }
