@@ -80,6 +80,81 @@ header.sub-header button {
   border-right: solid 1px #b3b3b3;
 }
 
+#sidebar a {
+  color: #555E64;
+  font-size: 12px;
+}
+#sidebar header {
+  background: #e0e5e7;
+  padding: 9px 0;
+  border-bottom: 1px solid #ced8df;
+  position: relative;
+}
+
+#sidebar header h2 {
+  float: left;
+  font-weight: bold;
+  margin-left: 5px;
+  font-size: 12px;
+  color: #555E64;
+}
+
+#sidebar header img.dropdown-button {
+  float: right;
+  margin-right: 5px;
+}
+
+#sidebar ul {
+  padding: 5px 0;
+}
+
+#sidebar ul li {
+  position: relative;
+}
+
+#sidebar ul > li > a {
+  padding: 5px 0;
+  display: block;
+}
+
+#sidebar ul > li:hover {
+  background: #d1d4d7;
+}
+
+#sidebar ul > li > a > img.icon {
+  float: left;
+  margin: 0 5px;
+}
+
+#sidebar ul > li > a > h3 {
+  float: left;
+}
+
+#sidebar ul > li > a > img.dropdown-button {
+  float: right;
+  display: none;
+  margin-right: 5px;
+}
+
+#sidebar ul > li:hover > a > img.dropdown-button {
+  display: block;
+}
+
+#sidebar .dropdown-menu {
+  position: absolute;
+  border: 1px solid #b3b3b3;
+  z-index: 1;
+  top: 75%;
+  left: 218px;
+  background: #f3f3f3;
+  border-radius: 3px;
+  padding: 5px 0;
+}
+
+#sidebar .dropdown-menu > li > a {
+  padding: 2px 5px;
+}
+
 /*Notes List*/
 
 #notes-list {
@@ -88,6 +163,7 @@ header.sub-header button {
   height: 500px;
   border-right: solid 1px #b3b3b3;
 }
+
 
 /*Note Detail*/
 

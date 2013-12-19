@@ -1,5 +1,9 @@
 Nevernote.Views.Sidebar = Support.CompositeView.extend({
 
+  events: {
+    "click .dropdown-button": "toggleDropdown"
+  },
+
   render: function() {
     this.renderLayout();
     this.renderNotebooks();
@@ -23,5 +27,10 @@ Nevernote.Views.Sidebar = Support.CompositeView.extend({
     var container = this.$('#tags-list');
     this.renderChildInto(view, container);
   },
+
+  toggleDropdown: function(event) {
+    var menu = $(event.currentTarget).parents().eq(1).find('.dropdown-menu')
+    menu.toggleClass('hide');
+  }
 
 });

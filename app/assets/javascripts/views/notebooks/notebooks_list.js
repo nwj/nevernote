@@ -16,7 +16,6 @@ Nevernote.Views.NotebooksList = Support.CompositeView.extend({
   },
 
   render: function() {
-    console.log('rendering');
     this.$el.html(JST['notebooks/list']());
 
     return this;
