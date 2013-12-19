@@ -1,11 +1,38 @@
-<h3>Tags</h3>
-
-<ul>
-  <% Nevernote.tags.each(function(tag) { %>
-  <li>
-    <a href="#/tags/<%= tag.get('id') %>">
-      <%= tag.escape('name') %>
-    </a>
-  </li>
-  <% }); %>
+<header class="group">
+    <div>
+        <h2>Tags</h2>
+    </div>
+    <img class="dropdown-button" alt="*" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAANCAYAAACdKY9CAAAA3UlEQVQoU42ROwrCQBBA9w6eRitbj+OnUVAs/CCIN7DTzkLFQgOaxkaQQIQUoiiBmJhN/Cdpx50UA0FIXHiwzLxXDRvPlzmBKYAE0MmxyWJ1tbgDSQ8ddBnWQRCA7/uxoINuGHw87y8oeL0/cNYNqDR7kK+2IpQbXTic9NCh4PF8hSg7DUr1DsmFWhs2ikp7Ctz7g1jIawpmkhzZUcDdW4TBaAL94ehnTsGVuxEs24GLxX/mFJg2/4swmEqyq+2PYFh2LOgI98a2qlbED9ZxCMdBl4mrpwQZQTaBNLpf8RQVuXLJIpcAAAAASUVORK5CYII=">
+    <ul class="dropdown-menu hide">
+        <li>
+            <a href="#" class="new">New Tag...</a>
+        </li>
+    </ul>
+</header>
+<ul class="sidebar-list">
+    <% Nevernote.tags.each(function(tag) { %>
+    <li class="group">
+        <% var id = tag.get('id'); %>
+        <a class="group" href="#/tags/<%= tag.get('id') %>">
+            <img class="icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAj0lEQVR42mNgoDUorm03LqhvNSBZY2joKubCuvauwtq2/2AMZIPEiNJcWt8lAdR0AK4ZgfeC5PBqLqxuMQMqfIJFMww/AXkLtwG1bfeQFP8B4goo/oMkfg+fAci2HYOJF9S1HkaWI9aAz0V17eEgDGKTYwBOPGoAjQ14S4QBb3EaUFDXFose5+hpA6QGph4AnHs612kyAbcAAAAASUVORK5CYII=">
+            <h3>
+                <%= tag.escape('name') %>
+                (<%= tag.get('note_count') %>)
+            </h3>
+        </a>
+        <img class="dropdown-button" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAANCAYAAACdKY9CAAAA3UlEQVQoU42ROwrCQBBA9w6eRitbj+OnUVAs/CCIN7DTzkLFQgOaxkaQQIQUoiiBmJhN/Cdpx50UA0FIXHiwzLxXDRvPlzmBKYAE0MmxyWJ1tbgDSQ8ddBnWQRCA7/uxoINuGHw87y8oeL0/cNYNqDR7kK+2IpQbXTic9NCh4PF8hSg7DUr1DsmFWhs2ikp7Ctz7g1jIawpmkhzZUcDdW4TBaAL94ehnTsGVuxEs24GLxX/mFJg2/4swmEqyq+2PYFh2LOgI98a2qlbED9ZxCMdBl4mrpwQZQTaBNLpf8RQVuXLJIpcAAAAASUVORK5CYII=">
+        <ul class="dropdown-menu hide">
+            <li>
+                <a href="#" data-id="<%= id %>" class="rename">
+                    Rename...
+                </a>
+            </li>
+            <li>
+                <a href="#" data-id="<%= id %>" class="delete">
+                    Delete...
+                </a>
+            </li>
+        </ul>
+    </li>
+    <% }); %>
 </ul>
