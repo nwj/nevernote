@@ -3,7 +3,7 @@ Nevernote.Views.NotebookRename = Backbone.View.extend({
 
   events: {
     "click button.save" : "save",
-    "click button.cancel" : "leave"
+    "click button.cancel" : "cancel"
   },
 
   render: function() {
@@ -18,9 +18,18 @@ Nevernote.Views.NotebookRename = Backbone.View.extend({
     event.preventDefault();
     var formData = $(event.target.form).serializeJSON();
     this.model.save(formData);
-    $('#lightbox').toggleClass('hide');
+    this.leave();
   },
 
-  leave: function() {}
+  cancel: function(event) {
+    event.preventDefault();
+    this.leave();
+  },
+
+  leave: function() {
+    $('#lightbox').toggleClass('hide');
+    this.off();
+    this.remove();
+  }
 
 });
