@@ -1,4 +1,6 @@
 Nevernote.Views.NotebookRename = Backbone.View.extend({
+  id: "lightbox-dialog",
+
   events: {
     "click button.save" : "save",
     "click button.cancel" : "leave"
@@ -13,10 +15,10 @@ Nevernote.Views.NotebookRename = Backbone.View.extend({
   },
 
   save: function(event) {
-    var self = this;
     event.preventDefault();
     var formData = $(event.target.form).serializeJSON();
     this.model.save(formData);
+    $('#lightbox').toggleClass('hide');
   },
 
   leave: function() {}

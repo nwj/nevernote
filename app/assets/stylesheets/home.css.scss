@@ -67,16 +67,43 @@ header.sub-header button {
   border-radius: 3px;
 }
 
-#content #sidebar {
+#sidebar {
   float: left;
   width: 234px;
   height: 500px;
   border-right: solid 1px #b3b3b3;
 }
 
-#content #notes-list {
+#notes-list {
   float: left;
   width: 360px;
   height: 500px;
   border-right: solid 1px #b3b3b3;
+}
+
+#lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+#lightbox-dialog {
+  position: absolute;
+  top: 233px;
+  left: 333px;
+  width: 285px;
+  background: rgba(255, 255, 255, 1);
+  padding: 20px;
+  border: 1px solid #b3b3b3;
+}
+
+#lightbox-dialog header h3 {
+  float: left;
+}
+
+#lightbox-dialog header .cancel {
+  float: right;
 }

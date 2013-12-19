@@ -1,10 +1,16 @@
-<h3>Rename Notebook</h3>
+<header class="group">
+    <h3>Rename Notebook</h3>
+    <button class="cancel">x<button>
+</header>
+<section>
+    <form>
+        <label>Notebook name
+            <input type="text" name="notebook[name]" value="<%= notebook.get('name') %>">
+        </label>
 
-<form>
-  <label>Notebook name
-    <input type="text" name="notebook[name]" value="<%= notebook.get('name') %>">
-  </label>
-
-  <button class="cancel">Cancel</button>
-  <button class="save">Save</button>
-</form>
+        <div class="buttons">
+            <button class="cancel">Cancel</button>
+            <button class="save">Save</button>
+        </div>
+    </form>
+</section>

@@ -23,11 +23,10 @@ Nevernote.Views.NotebooksList = Support.CompositeView.extend({
     event.preventDefault();
     notebook = Nevernote.notebooks.get($(event.currentTarget).attr('data-id'))
 
-    var view = new Nevernote.Views.NotebookRename({
-        model: notebook
-    });
+    var view = new Nevernote.Views.NotebookRename({ model: notebook });
     var container = $('#lightbox');
     container.html(view.render())
+    container.toggleClass('hide');
   }
 
 });
