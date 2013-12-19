@@ -1,13 +1,16 @@
 <header class="group">
-    <h3>Create a New Notebook</h3>
+    <h3>Notebook Properties</h3>
     <button class="cancel">x<button>
 </header>
 <section>
     <form>
         <label class="text">Notebook name
-            <input type="text" name="notebook[name]">
+            <input type="text" name="notebook[name]" value="<%= notebook.get('name') %>">
         </label>
-
+        <label class="checkbox">
+            <input type="checkbox" name="new_default_notebook">
+            Make this my default notebook
+        </label>
         <div class="buttons">
             <button class="cancel">Cancel</button>
             <button class="save">Save</button>

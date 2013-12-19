@@ -9,9 +9,10 @@ Nevernote.Views.NotebooksList = Support.CompositeView.extend({
   },
 
   events: {
-    "click .rename-notebook": "rename",
-    "click .new-notebook" : "new",
-    "click .delete-notebook": "delete"
+    "click .new" : "new",
+    "click .rename": "rename",
+    "click .properties": "properties",
+    "click .delete": "delete"
   },
 
   render: function() {
@@ -39,6 +40,17 @@ Nevernote.Views.NotebooksList = Support.CompositeView.extend({
     container.html(view.render().$el)
     container.toggleClass('hide');
   },
+
+  properties: function(event) {
+    event.preventDefault();
+    notebook = Nevernote.notebooks.get($(event.currentTarget).attr('data-id'))
+
+    var view = new Nevernote.Views.NotebookProperties({ model: notebook });
+    var container = $('#lightbox');
+    container.html(view.render().$el)
+    container.toggleClass('hide');
+  },
+
 
   delete: function(event) {
     event.preventDefault();

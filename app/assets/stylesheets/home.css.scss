@@ -146,12 +146,15 @@ header.sub-header button {
   display: block;
 }
 
-#lightbox-dialog form input {
+#lightbox-dialog form label input {
+  margin-top: 10px;
+}
+
+#lightbox-dialog form label.text input {
   display: block;
   width: 418px;
   height: 30px;
   padding: 1px 10px;
-  margin-top: 10px;
   border: 1px solid #b3b3b3;
   font-size: 13px;
 }
