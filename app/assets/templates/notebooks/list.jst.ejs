@@ -1,15 +1,15 @@
 <header class="group">
     <div>
         <h2>Notebooks</h2>
-        <img class="dropdown-button" alt="*" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAANCAYAAACdKY9CAAAA3UlEQVQoU42ROwrCQBBA9w6eRitbj+OnUVAs/CCIN7DTzkLFQgOaxkaQQIQUoiiBmJhN/Cdpx50UA0FIXHiwzLxXDRvPlzmBKYAE0MmxyWJ1tbgDSQ8ddBnWQRCA7/uxoINuGHw87y8oeL0/cNYNqDR7kK+2IpQbXTic9NCh4PF8hSg7DUr1DsmFWhs2ikp7Ctz7g1jIawpmkhzZUcDdW4TBaAL94ehnTsGVuxEs24GLxX/mFJg2/4swmEqyq+2PYFh2LOgI98a2qlbED9ZxCMdBl4mrpwQZQTaBNLpf8RQVuXLJIpcAAAAASUVORK5CYII=">
     </div>
+    <img class="dropdown-button" alt="*" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAANCAYAAACdKY9CAAAA3UlEQVQoU42ROwrCQBBA9w6eRitbj+OnUVAs/CCIN7DTzkLFQgOaxkaQQIQUoiiBmJhN/Cdpx50UA0FIXHiwzLxXDRvPlzmBKYAE0MmxyWJ1tbgDSQ8ddBnWQRCA7/uxoINuGHw87y8oeL0/cNYNqDR7kK+2IpQbXTic9NCh4PF8hSg7DUr1DsmFWhs2ikp7Ctz7g1jIawpmkhzZUcDdW4TBaAL94ehnTsGVuxEs24GLxX/mFJg2/4swmEqyq+2PYFh2LOgI98a2qlbED9ZxCMdBl4mrpwQZQTaBNLpf8RQVuXLJIpcAAAAASUVORK5CYII=">
     <ul class="dropdown-menu hide">
         <li>
             <a href="#" class="new">New Notebook...</a>
         </li>
     </ul>
 </header>
-<ul>
+<ul class="notebook-detail">
     <li>
         <a class="group" href="#">
             <img class="icon" alt="*" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAm0lEQVR42mNgwALya5rVC2va5hTWtv0srGktZSAWFNS2WRbWtq4DavyPhJ/X19ez4ddY1+oNxIfRNCJwXVsyPlvPoGtgIAUAnTwTmwE4XYNuETjAatv+kG0A1BXrKDIAEvqYBuD3Opo8UOAA2S6ARSVFLoAKXiXbBSBQVNuaQJELQEkWKPGEbBeAXVHTlkmRAbCMQ7YByH4kxgAAl9BUWxvsjH0AAAAASUVORK5CYII=">
@@ -19,7 +19,7 @@
         </a>
     </li>
     <% Nevernote.notebooks.each(function(notebook) { %>
-    <li>
+    <li class="group">
         <% var id = notebook.get('id'); %>
         <a class="group" href="#/notebooks/<%= id %>">
             <img class="icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAVUlEQVR42mNgGFSguL5Nq7C2bSkQ/ycCH8AwACh4tbCuPZAYy4BqH2IT/IBuE5o8XGzUgCFlQEFdq3dBbdsZUPogywBseHAYAPTWRmwGPCHCgM/IegAsqyv9CNAK4AAAAABJRU5ErkJggg==">
@@ -27,8 +27,8 @@
                 <%= notebook.escape('name') %>
                 (<%= notebook.get('note_count') %>)
             </h3>
-            <img class="dropdown-button" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAANCAYAAACdKY9CAAAA3UlEQVQoU42ROwrCQBBA9w6eRitbj+OnUVAs/CCIN7DTzkLFQgOaxkaQQIQUoiiBmJhN/Cdpx50UA0FIXHiwzLxXDRvPlzmBKYAE0MmxyWJ1tbgDSQ8ddBnWQRCA7/uxoINuGHw87y8oeL0/cNYNqDR7kK+2IpQbXTic9NCh4PF8hSg7DUr1DsmFWhs2ikp7Ctz7g1jIawpmkhzZUcDdW4TBaAL94ehnTsGVuxEs24GLxX/mFJg2/4swmEqyq+2PYFh2LOgI98a2qlbED9ZxCMdBl4mrpwQZQTaBNLpf8RQVuXLJIpcAAAAASUVORK5CYII=">
         </a>
+        <img class="dropdown-button" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAANCAYAAACdKY9CAAAA3UlEQVQoU42ROwrCQBBA9w6eRitbj+OnUVAs/CCIN7DTzkLFQgOaxkaQQIQUoiiBmJhN/Cdpx50UA0FIXHiwzLxXDRvPlzmBKYAE0MmxyWJ1tbgDSQ8ddBnWQRCA7/uxoINuGHw87y8oeL0/cNYNqDR7kK+2IpQbXTic9NCh4PF8hSg7DUr1DsmFWhs2ikp7Ctz7g1jIawpmkhzZUcDdW4TBaAL94ehnTsGVuxEs24GLxX/mFJg2/4swmEqyq+2PYFh2LOgI98a2qlbED9ZxCMdBl4mrpwQZQTaBNLpf8RQVuXLJIpcAAAAASUVORK5CYII=">
         <ul class="dropdown-menu hide">
             <li>
                 <a href="#" data-id="<%= id %>" class="rename">

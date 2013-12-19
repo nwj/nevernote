@@ -102,45 +102,49 @@ header.sub-header button {
 #sidebar header img.dropdown-button {
   float: right;
   margin-right: 5px;
+  cursor: pointer;
 }
 
-#sidebar ul {
+#sidebar ul.notebook-detail {
   padding: 5px 0;
 }
 
-#sidebar ul li {
+#sidebar ul.notebook-detail li {
   position: relative;
 }
 
-#sidebar ul > li > a {
+#sidebar ul.notebook-detail > li > a {
   padding: 5px 0;
   display: block;
+  float: left;
+  width: 210px;
 }
 
-#sidebar ul > li:hover {
+#sidebar ul.notebook-detail > li:hover {
   background: #d1d4d7;
 }
 
-#sidebar ul > li > a > img.icon {
+#sidebar ul.notebook-detail > li > a > img.icon {
   float: left;
   margin: 0 5px;
 }
 
-#sidebar ul > li > a > h3 {
+#sidebar ul.notebook-detail > li > a > h3 {
   float: left;
 }
 
-#sidebar ul > li > a > img.dropdown-button {
+#sidebar ul.notebook-detail > li > img.dropdown-button {
   float: right;
   display: none;
-  margin-right: 5px;
+  padding: 5px 5px 5px 0;
+  cursor: pointer;
 }
 
-#sidebar ul > li:hover > a > img.dropdown-button {
+#sidebar ul.notebook-detail > li:hover > img.dropdown-button {
   display: block;
 }
 
-#sidebar .dropdown-menu {
+#sidebar ul.dropdown-menu {
   position: absolute;
   border: 1px solid #b3b3b3;
   z-index: 1;
@@ -151,9 +155,15 @@ header.sub-header button {
   padding: 5px 0;
 }
 
-#sidebar .dropdown-menu > li > a {
+#sidebar ul.dropdown-menu > li:hover {
+  background: #d1d4d7;
+}
+
+#sidebar ul.dropdown-menu > li > a {
+  display:block;
   padding: 2px 5px;
 }
+
 
 /*Notes List*/
 
