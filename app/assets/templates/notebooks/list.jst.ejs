@@ -1,4 +1,5 @@
 <h3>Notebooks</h3>
+<a href="#" class="new-notebook">New Notebook...</a>
 
 <ul>
   <li>
@@ -11,7 +12,9 @@
       <%= notebook.escape('name') %>
     </a>
     <ul>
-        <li><a href="#" data-id="<%= id %>" class="rename">Rename</a></li>
+        <li>
+            <a href="#" data-id="<%= id %>" class="rename-notebook">Rename</a>
+        </li>
     </ul>
   </li>
   <% }); %>

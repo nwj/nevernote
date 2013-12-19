@@ -1,4 +1,4 @@
-Nevernote.Views.NotebookRename = Backbone.View.extend({
+Nevernote.Views.NotebookNew = Backbone.View.extend({
   id: "lightbox-dialog",
 
   events: {
@@ -7,9 +7,7 @@ Nevernote.Views.NotebookRename = Backbone.View.extend({
   },
 
   render: function() {
-    this.$el.html(JST['notebooks/rename']({
-        notebook: this.model
-    }));
+    this.$el.html(JST['notebooks/new']());
 
     return this;
   },
@@ -17,7 +15,7 @@ Nevernote.Views.NotebookRename = Backbone.View.extend({
   save: function(event) {
     event.preventDefault();
     var formData = $(event.target.form).serializeJSON();
-    this.model.save(formData);
+    Nevernote.notebooks.create(formData);
     this.leave();
   },
 
