@@ -2,6 +2,8 @@
 // These must be loaded using content_for :head in the appropriate view.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+/*Main Header*/
+
 header.header {
   background: #4CA52E;
   height: 32px;
@@ -31,6 +33,8 @@ header.header .account-button h3 {
 header.header .account-button form {
   float: left;
 }
+
+/*Sub-Header*/
 
 header.sub-header {
   border: solid 1px #b3b3b3;
@@ -67,6 +71,8 @@ header.sub-header button {
   border-radius: 3px;
 }
 
+/*Sidebar*/
+
 #sidebar {
   float: left;
   width: 234px;
@@ -74,12 +80,18 @@ header.sub-header button {
   border-right: solid 1px #b3b3b3;
 }
 
+/*Notes List*/
+
 #notes-list {
   float: left;
   width: 360px;
   height: 500px;
   border-right: solid 1px #b3b3b3;
 }
+
+/*Note Detail*/
+
+/*Lightbox*/
 
 #lightbox {
   position: fixed;
@@ -92,18 +104,82 @@ header.sub-header button {
 
 #lightbox-dialog {
   position: absolute;
-  top: 233px;
-  left: 333px;
-  width: 285px;
+  top: 225px;
+  left: 275px;
   background: rgba(255, 255, 255, 1);
   padding: 20px;
-  border: 1px solid #b3b3b3;
+  border: 1px solid #a4a4a4;
+}
+
+#lightbox-dialog header {
+  border-bottom: 1px solid #b3b3b3;
+  padding-bottom: 8px;
 }
 
 #lightbox-dialog header h3 {
   float: left;
+  font-size: 18px;
+  color: #747474;
 }
 
 #lightbox-dialog header .cancel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 2px 7px;
+  display: block;
+  background: white;
+  color: #747474;
+}
+
+#lightbox-dialog section {
+  margin-top: 15px;
+}
+
+#lightbox-dialog form label {
+  font-size: 13px;
+  display: block;
+}
+
+#lightbox-dialog form input {
+  display: block;
+  width: 418px;
+  height: 30px;
+  padding: 1px 10px;
+  margin-top: 10px;
+  border: 1px solid #b3b3b3;
+  font-size: 13px;
+}
+
+#lightbox-dialog form .buttons {
+  margin-top: 15px;
   float: right;
+}
+
+#lightbox-dialog form .buttons button {
+  display: block;
+  float: left;
+  padding: 6px 35px;
+  margin-left: 10px;
+  font-size: 13px;
+  border-radius: 2px;
+}
+
+#lightbox-dialog form .buttons button.save {
+  background: #4CA52E;
+  border: solid 1px #4c881d;
+  color: white;
+}
+
+#lightbox-dialog form .buttons button.save:hover {
+  background: #569720;
+}
+
+#lightbox-dialog form .buttons button.cancel {
+  background: #efefef;
+  border: solid 1px #a4a4a4;
+}
+
+#lightbox-dialog form .buttons button.cancel:hover {
+  background: #dfdfdf;
 }
