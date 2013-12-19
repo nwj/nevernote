@@ -25,7 +25,7 @@
             <img class="icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAVUlEQVR42mNgGFSguL5Nq7C2bSkQ/ycCH8AwACh4tbCuPZAYy4BqH2IT/IBuE5o8XGzUgCFlQEFdq3dBbdsZUPogywBseHAYAPTWRmwGPCHCgM/IegAsqyv9CNAK4AAAAABJRU5ErkJggg==">
             <h3>
                 <%= notebook.escape('name') %>
-                (<%= notebook.get('note_count') %>)
+                (<%= notebook.get('note_count') ? notebook.get('note_count') : 0 %>)
             </h3>
         </a>
         <img class="dropdown-button" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAANCAYAAACdKY9CAAAA3UlEQVQoU42ROwrCQBBA9w6eRitbj+OnUVAs/CCIN7DTzkLFQgOaxkaQQIQUoiiBmJhN/Cdpx50UA0FIXHiwzLxXDRvPlzmBKYAE0MmxyWJ1tbgDSQ8ddBnWQRCA7/uxoINuGHw87y8oeL0/cNYNqDR7kK+2IpQbXTic9NCh4PF8hSg7DUr1DsmFWhs2ikp7Ctz7g1jIawpmkhzZUcDdW4TBaAL94ehnTsGVuxEs24GLxX/mFJg2/4swmEqyq+2PYFh2LOgI98a2qlbED9ZxCMdBl4mrpwQZQTaBNLpf8RQVuXLJIpcAAAAASUVORK5CYII=">
