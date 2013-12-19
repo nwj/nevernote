@@ -131,6 +131,10 @@ header.sub-header button {
 
 #sidebar ul.sidebar-list > li > a > h3 {
   float: left;
+  overflow: hidden;
+  text-overflow: clip;
+  max-width: 175px;
+  white-space: nowrap;
 }
 
 #sidebar ul.sidebar-list > li > img.dropdown-button {
