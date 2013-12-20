@@ -4,7 +4,7 @@ Nevernote.Routers.Home = Support.SwappingRouter.extend({
   },
 
   routes: {
-    "" : "home",
+    "" : "home"
   },
 
   home: function() {
