@@ -28,6 +28,7 @@ header.header .account-button h3 {
   color: white;
   margin-right: 10px;
   padding-top: 5px;
+  font-weight: lighter;
 }
 
 header.header .account-button form {
@@ -177,8 +178,62 @@ header.sub-header button {
   width: 360px;
   height: 500px;
   border-right: solid 1px #b3b3b3;
+  position: relative;
+  background: white;
 }
 
+#notes-list header {
+  padding: 10px;
+  border-bottom: 1px solid #b3b3b3;
+}
+
+
+#notes-list header img {
+  float: left;
+  margin-right: 5px;
+}
+
+#notes-list header h1 {
+  float: left;
+  font-size: 16px;
+  color: #6a6a6a;
+}
+
+#notes-list ul {
+  overflow-y: scroll;
+}
+
+#notes-list ul > li {
+  border-bottom: 1px solid #e6e6e6;
+  height: 70px;
+}
+
+#notes-list ul > li:hover {
+  background: #ecf0f3;
+}
+
+#notes-list ul > li > a {
+  display: block;
+  padding: 7px 10px;
+}
+
+#notes-list ul > li > a > .snippet-title {
+  color: #404040;
+  font-weight: bold;
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+
+#notes-list ul > li > a > .snippet-content {
+  font-size: 11px;
+}
+#notes-list ul > li > a > .snippet-content .date {
+  color: #4A8DB8;
+}
+
+#notes-list ul > li > a > .snippet-content .content {
+  color: #1d1d1d;
+}
 
 /*Note Detail*/
 

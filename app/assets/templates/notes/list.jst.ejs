@@ -1,9 +1,16 @@
-<h1><%= Nevernote.current_name %></h1>
+<header class="group">
+  <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAlUlEQVR42mNgwAIWL16svnz58jnLli37CcSlDMQCoGJLIF4HxP+R8PNVq1ax4dUItM0bqPAwmkY4Xrp0aTI+W8+ga2AgBQBtn4nNAFyuwbAIFGBAzh+yDYAqXkepAZbYDCAQY//RBQ6Q7QKkqCTfBVDBq2S7AASACSaBIheAkixQ4gnZLoC6IpMiA2AZh2wDkP1IjAEAOdubTOHEWpEAAAAASUVORK5CYII=">
+  <h1><%= Nevernote.current_name %></h1>
+</header>
 <ul>
   <% Nevernote.notes.each(function(note) { %>
   <li>
     <a href="#/notes/<%= note.get('id') %>">
-      <%= note.escape('title') %>
+      <h2 class="snippet-title"><%= note.escape('title') %></h2>
+      <div class="snippet-content">
+        <span class="date"><%= note.escape('last_updated') %></span>
+        <span class="content"><%= note.escape('snippet') %></span>
+      </div>
     </a>
   </li>
   <% }); %>
