@@ -8,3 +8,4 @@ FactoryGirl.create(
 )
 Tagging.create(note_id: Note.first.id, tag_id: Tag.first.id)
 Tagging.create(note_id: Note.last.id, tag_id: Tag.last.id)
+User.first.update_attributes(notebook_id: Notebook.first.id)
