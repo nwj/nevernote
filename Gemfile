@@ -27,9 +27,7 @@ group :test do
 end
 
 group :development, :test do
-  gem 'factory_girl_rails'
   gem 'rspec-rails'
-  gem 'faker'
 end
 
 # Production gems (also used in all other environments)
@@ -39,3 +37,5 @@ gem 'backbone-on-rails'
 gem 'backbone-support'
 gem 'ejs'
 gem 'rabl'
+gem 'factory_girl_rails'
+gem 'faker'
