@@ -1,18 +1,23 @@
 class HomesController < ApplicationController
   def show
-    notebooks = current_user.notebooks.order('name')
     @notebooks_json = Rabl.render(
-      notebooks,
+      current_user.notebooks.order('name'),
       'index',
       view_path: 'app/views/api/notebooks',
       format: :json
     )
 
-    tags = current_user.tags.order('name')
     @tags_json = Rabl.render(
-      tags,
+      current_user.tags.order('name'),
       'index',
       view_path: 'app/views/api/tags',
+      format: :json
+    )
+
+    @notes_json = Rabl.render(
+      current_user.notes.order('updated_at DESC'),
+      'index',
+      view_path: 'app/views/api/notes',
       format: :json
     )
 
