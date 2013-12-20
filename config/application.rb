@@ -61,6 +61,7 @@ module Nevernote
 
     # Precompile assets prior to initializing so that Heroku works
     config.assets.initialize_on_precompile = false
+    config.assets.precompile += ['home.css', 'landing.css', 'login.css']
 
     # Set which spec files to generate
     config.generators do |g|
