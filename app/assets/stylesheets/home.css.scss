@@ -212,7 +212,6 @@ header.sub-header button {
 
 #notes-list ul > li {
   border-bottom: 1px solid #e6e6e6;
-  height: 70px;
 }
 
 #notes-list ul > li:hover {
@@ -233,7 +232,12 @@ header.sub-header button {
 
 #notes-list ul > li > a > .snippet-content {
   font-size: 11px;
+  height: 40px;
+  overflow: hidden;
+  white-space: normal;
+  text-overflow: ellipsis;
 }
+
 #notes-list ul > li > a > .snippet-content .date {
   color: #4A8DB8;
 }
