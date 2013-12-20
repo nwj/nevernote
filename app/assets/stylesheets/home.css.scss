@@ -2,6 +2,11 @@
 // These must be loaded using content_for :head in the appropriate view.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+#content {
+  border-bottom: 1px solid #b3b3b3;
+}
+
 /*Main Header*/
 
 header.header {
@@ -77,8 +82,9 @@ header.sub-header button {
 #sidebar {
   float: left;
   width: 234px;
-  height: 500px;
+  height: 850px;
   border-right: solid 1px #b3b3b3;
+  overflow-y: auto;
 }
 
 #sidebar a {
@@ -118,7 +124,7 @@ header.sub-header button {
   padding: 5px 0;
   display: block;
   float: left;
-  width: 210px;
+  width: 200px;
 }
 
 #sidebar ul.sidebar-list > li:hover {
@@ -134,7 +140,7 @@ header.sub-header button {
   float: left;
   overflow: hidden;
   text-overflow: clip;
-  max-width: 175px;
+  max-width: 150px;
   white-space: nowrap;
 }
 
@@ -154,7 +160,7 @@ header.sub-header button {
   border: 1px solid #b3b3b3;
   z-index: 1;
   top: 75%;
-  left: 218px;
+  right: 10px;
   background: #f3f3f3;
   border-radius: 3px;
   padding: 5px 0;
@@ -176,9 +182,9 @@ header.sub-header button {
 #notes-list {
   float: left;
   width: 360px;
-  height: 500px;
+  height: 850px;
+  left: 235px;
   border-right: solid 1px #b3b3b3;
-  position: relative;
   background: white;
 }
 
@@ -200,7 +206,8 @@ header.sub-header button {
 }
 
 #notes-list ul {
-  overflow-y: scroll;
+  overflow-y: auto;
+  height: 810px;
 }
 
 #notes-list ul > li {
@@ -236,6 +243,12 @@ header.sub-header button {
 }
 
 /*Note Detail*/
+
+#note-detail {
+  float: left;
+  height: 850px;
+  left: 597px;
+}
 
 /*Lightbox*/
 
