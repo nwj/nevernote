@@ -4,7 +4,14 @@ Nevernote.Views.Home = Support.CompositeView.extend({
   },
 
   newNote: function() {
-    Nevernote.notes.create({title: "Untitled"})
+    if (Nevernote.currentNotebook === null) {
+      var notebook = Nevernote.defaultNotebook;
+    } else {
+      var notebook = Nevernote.currentNotebook;
+    }
+
+    Nevernote.notes.create({title: "Untitled", notebook_id: notebook.get('id')})
+    Nevernote.notebooks.fetch();
   },
 
   render: function() {
