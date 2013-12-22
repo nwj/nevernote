@@ -16,6 +16,14 @@ Nevernote.Views.NotebookDelete = Backbone.View.extend({
 
   save: function(event) {
     event.preventDefault();
+    if (this.model === Nevernote.currentNotebook) {
+      Nevernote.currentNotebook = null;
+      Nevernote.notes.fetch({
+        success: function() {
+            Nevernote.note = Nevernote.notes.at(0)
+        }
+      });
+    };
     this.model.destroy();
     this.leave();
   },
