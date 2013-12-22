@@ -11,7 +11,7 @@
 </header>
 <ul class="sidebar-list">
     <li>
-        <a class="group" href="#">
+        <a class="all group" href="#">
             <img class="icon" alt="*" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAm0lEQVR42mNgwALya5rVC2va5hTWtv0srGktZSAWFNS2WRbWtq4DavyPhJ/X19ez4ddY1+oNxIfRNCJwXVsyPlvPoGtgIAUAnTwTmwE4XYNuETjAatv+kG0A1BXrKDIAEvqYBuD3Opo8UOAA2S6ARSVFLoAKXiXbBSBQVNuaQJELQEkWKPGEbBeAXVHTlkmRAbCMQ7YByH4kxgAAl9BUWxvsjH0AAAAASUVORK5CYII=">
             <h3>
                 All Notes
@@ -22,7 +22,7 @@
     <% var id = notebook.get('id'); %>
     <% var count = notebook.get('note_count'); %>
     <li class="group">
-        <a class="group" href="#" data-id="<%= id %>">
+        <a class="show group" href="#" data-id="<%= id %>">
             <img class="icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAVUlEQVR42mNgGFSguL5Nq7C2bSkQ/ycCH8AwACh4tbCuPZAYy4BqH2IT/IBuE5o8XGzUgCFlQEFdq3dBbdsZUPogywBseHAYAPTWRmwGPCHCgM/IegAsqyv9CNAK4AAAAABJRU5ErkJggg==">
             <h3>
                 <%= notebook.escape('name') %>

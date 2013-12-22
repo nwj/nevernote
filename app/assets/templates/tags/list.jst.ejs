@@ -14,7 +14,7 @@
     <% var id = tag.get('id'); %>
     <% var count = tag.get('note_count') %>
     <li class="group">
-        <a class="group" href="#" data-id="<%= tag.get('id') %>">
+        <a class="show group" href="#" data-id="<%= tag.get('id') %>">
             <img class="icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAj0lEQVR42mNgoDUorm03LqhvNSBZY2joKubCuvauwtq2/2AMZIPEiNJcWt8lAdR0AK4ZgfeC5PBqLqxuMQMqfIJFMww/AXkLtwG1bfeQFP8B4goo/oMkfg+fAci2HYOJF9S1HkaWI9aAz0V17eEgDGKTYwBOPGoAjQ14S4QBb3EaUFDXFose5+hpA6QGph4AnHs612kyAbcAAAAASUVORK5CYII=">
             <h3>
                 <%= tag.escape('name') %>

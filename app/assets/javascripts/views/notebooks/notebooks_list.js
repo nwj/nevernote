@@ -9,10 +9,12 @@ Nevernote.Views.NotebooksList = Support.CompositeView.extend({
   },
 
   events: {
+    "click .show" : "show",
+    "click .all" : "all",
     "click .new" : "new",
-    "click .rename": "rename",
-    "click .properties": "properties",
-    "click .delete": "delete"
+    "click .rename" : "rename",
+    "click .properties" : "properties",
+    "click .delete" : "delete"
   },
 
   render: function() {
@@ -20,6 +22,30 @@ Nevernote.Views.NotebooksList = Support.CompositeView.extend({
     this.$el.html(template());
 
     return this;
+  },
+
+  show: function(event) {
+    event.preventDefault();
+    var notebook = Nevernote.notebooks.get($(event.currentTarget).attr('data-id'))
+    Nevernote.currentNotebook = notebook;
+
+    notebook.fetch({
+        success: function() {
+            Nevernote.notes.reset(notebook.get('notes').models);
+            Nevernote.note = Nevernote.notes.at(0);
+        }
+    });
+  },
+
+  all: function(event) {
+    event.preventDefault();
+    Nevernote.currentNotebook = null;
+
+    Nevernote.notes.fetch({
+        success: function() {
+            Nevernote.note = Nevernote.notes.at(0);
+        }
+    });
   },
 
   new: function(event) {

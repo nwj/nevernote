@@ -11,7 +11,7 @@
 <ul>
   <% Nevernote.notes.each(function(note) { %>
   <li>
-    <a href="#" data-id="<%= note.get('id') %>">
+    <a class="show" href="#" data-id="<%= note.get('id') %>">
       <h2 class="snippet-title"><%= note.escape('title') %></h2>
       <div class="snippet-content">
         <span class="date"><%= note.escape('updated_at') %></span>
