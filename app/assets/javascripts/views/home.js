@@ -10,7 +10,7 @@ Nevernote.Views.Home = Support.CompositeView.extend({
   render: function() {
     this.renderLayout();
     this.renderSidebar();
-    //this.renderNotesList();
+    this.renderNotesList();
     //this.renderNoteDetail();
 
     return this;
