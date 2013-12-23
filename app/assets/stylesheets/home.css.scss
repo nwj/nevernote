@@ -3,8 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-#content {
-  border-bottom: 1px solid #b3b3b3;
+#content { border-bottom: 1px solid #b3b3b3;
 }
 
 /*Main Header*/
@@ -252,6 +251,38 @@ header.sub-header button {
   float: left;
   height: 850px;
   width: 650px;
+}
+
+#note-detail .note-content {
+  margin: 12px;
+  background: white;
+  border: 1px solid #e6e6e6;
+  border-radius: 3px;
+  min-height: 260px;
+}
+
+
+#note-detail .note-content .note-title {
+  border-bottom: 1px solid #e6e6e6;
+  margin: 0 10px;
+  padding: 10px 0;
+  font-size: 15px;
+  color: #7B7C7E;
+}
+
+#note-detail .note-content .note-title input {
+  border: 0;
+  width: 100%;
+  font-size: 15px;
+  color: #7B7C7E;
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
+#note-detail .note-content .note-body {
+  margin: 20px;
+  font-size: 14px;
 }
 
 /*Lightbox*/
