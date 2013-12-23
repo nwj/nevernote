@@ -31,7 +31,7 @@ class Api::NotebooksController < ApplicationController
     @notes = @notebook.notes.order('updated_at DESC')
 
     if @notebook.update_attributes(params[:notebook])
-      if params[:new_default_notebook]
+      if params[:default]
         change_default_notebook!(current_user, @notebook)
       end
 

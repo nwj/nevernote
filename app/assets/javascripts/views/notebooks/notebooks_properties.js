@@ -19,6 +19,7 @@ Nevernote.Views.NotebookProperties = Backbone.View.extend({
     var formData = $(event.target.form).serializeJSON();
     this.model.save(formData);
     this.leave();
+    Nevernote.notebooks.fetch()
   },
 
   cancel: function(event) {

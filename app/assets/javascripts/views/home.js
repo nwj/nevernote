@@ -5,7 +5,7 @@ Nevernote.Views.Home = Support.CompositeView.extend({
 
   newNote: function() {
     if (Nevernote.currentNotebook === null) {
-      var notebook = Nevernote.defaultNotebook;
+      var notebook = Nevernote.notebooks.findWhere({default: true});
     } else {
       var notebook = Nevernote.currentNotebook;
     }

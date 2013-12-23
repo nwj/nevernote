@@ -1,5 +1,5 @@
 class Notebook < ActiveRecord::Base
-  attr_accessible :name, :user_id
+  attr_accessible :name, :user_id, :default
 
   validates :name, :user_id, presence: true
   validates :name, uniqueness: { scope: :user_id }

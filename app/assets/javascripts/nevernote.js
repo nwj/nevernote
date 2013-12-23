@@ -4,12 +4,17 @@ window.Nevernote = {
   Views: {},
   Routers: {},
   initialize: function(data) {
-    this.notebooks = new Nevernote.Collections.Notebooks(data.notebooks);
+    var self = this;
+    this.notebooks = new Nevernote.Collections.Notebooks();
+    this.notebooks.fetch({
+        success: function() {
+            self.defaultNotebook = self.notebooks.findWhere({default: true})
+        }
+    });
     this.tags = new Nevernote.Collections.Tags(data.tags);
     this.notes = new Nevernote.Collections.Notes(data.notes);
     this.note = this.notes.at(0);
     this.currentNotebook = null;
-    this.defaultNotebook = this.notebooks.at(0);
 
     Nevernote.router = new Nevernote.Routers.Home();
     if (!Backbone.history.started) {
