@@ -1,18 +1,14 @@
 Nevernote.Views.NoteDetail = Support.CompositeView.extend({
-//events: {
-    //"click button.delete-note": "deleteNote"
-  //},
+  initialize: function() {
+    _.bindAll(this, "render");
 
-  //deleteNote: function() {
-    //Nevernote.note.destroy({
-        //success: function () {
-            //Nevernote.router.all();
-        //}
-    //});
-  //},
-
+    this.bindTo(Nevernote.note, "add", this.render);
+    this.bindTo(Nevernote.note, "remove", this.render);
+    this.bindTo(Nevernote.note, "change", this.render);
+  },
 
   render: function() {
+    console.log("Rendering note detail", Nevernote.note);
     this.$el.html(JST['notes/detail']());
 
     return this;

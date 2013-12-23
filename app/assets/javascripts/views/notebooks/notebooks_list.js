@@ -32,7 +32,7 @@ Nevernote.Views.NotebooksList = Support.CompositeView.extend({
     notebook.fetch({
         success: function() {
             Nevernote.notes.reset(notebook.get('notes').models);
-            Nevernote.note = Nevernote.notes.at(0);
+            Nevernote.note.set(Nevernote.notes.at(0).attributes);
         }
     });
   },
@@ -43,7 +43,7 @@ Nevernote.Views.NotebooksList = Support.CompositeView.extend({
 
     Nevernote.notes.fetch({
         success: function() {
-            Nevernote.note = Nevernote.notes.at(0);
+            Nevernote.note.set(Nevernote.notes.at(0).attributes);
         }
     });
   },

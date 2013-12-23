@@ -13,7 +13,7 @@ window.Nevernote = {
     });
     this.tags = new Nevernote.Collections.Tags(data.tags);
     this.notes = new Nevernote.Collections.Notes(data.notes);
-    this.note = this.notes.at(0);
+    this.note = new Nevernote.Models.Note(this.notes.at(0).attributes)
     this.currentNotebook = null;
 
     new Nevernote.Routers.Home();

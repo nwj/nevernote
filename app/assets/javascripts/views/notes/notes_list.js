@@ -7,10 +7,20 @@ Nevernote.Views.NotesList = Support.CompositeView.extend({
     this.bindTo(Nevernote.notes, "reset", this.render);
   },
 
+  events: {
+    "click .show" : "show"
+  },
+
   render: function() {
     this.$el.html(JST['notes/list']());
 
     return this;
+  },
+
+  show: function(event) {
+    event.preventDefault();
+    var note = Nevernote.notes.get($(event.currentTarget).attr('data-id'))
+    Nevernote.note.set(note.attributes);
   }
 
 });
