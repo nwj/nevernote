@@ -16,7 +16,7 @@ window.Nevernote = {
     this.note = this.notes.at(0);
     this.currentNotebook = null;
 
-    Nevernote.router = new Nevernote.Routers.Home();
+    new Nevernote.Routers.Home();
     if (!Backbone.history.started) {
         Backbone.history.start();
         Backbone.history.started = true;
