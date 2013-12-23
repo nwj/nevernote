@@ -8,7 +8,12 @@
             <input type="text" name="notebook[name]" value="<%= notebook.get('name') %>">
         </label>
         <label class="checkbox">
-            <input type="checkbox" name="default">
+            <% if (notebook === Nevernote.notebooks.findWhere({default: true})) { %>
+               <% var disabled = 'disabled="disabled" checked="true"' %>
+            <% } else { %>
+              <% var disabled = "" %>
+            <% } %>
+            <input type="checkbox" name="default" <%= disabled %>>
             Make this my default notebook
         </label>
         <div class="buttons">
