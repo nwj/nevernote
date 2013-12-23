@@ -3,8 +3,10 @@
 <header class="note-sub-toolbar">
 </header>
 <section class="note-content">
+    <% var title = Nevernote.note.escape('title') %>
     <div class="note-title">
-        <%= Nevernote.note.escape('title') %>
+        <h2><%= title %></h2>
+        <input type="text" name="note[title]" value="<%= title %>" class="hide">
     </div>
     <div class="note-body">
         <%= Nevernote.note.escape('content') %>

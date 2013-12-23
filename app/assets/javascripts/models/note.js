@@ -1,4 +1,5 @@
 Nevernote.Models.Note = Backbone.Model.extend({
+  urlRoot: "api/notes/",
 
   parse: function(response) {
     response["notebooks"] = new Nevernote.Collections.Notebooks(
