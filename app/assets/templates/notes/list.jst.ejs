@@ -1,12 +1,11 @@
 <header class="group">
-  <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAlUlEQVR42mNgwAIWL16svnz58jnLli37CcSlDMQCoGJLIF4HxP+R8PNVq1ax4dUItM0bqPAwmkY4Xrp0aTI+W8+ga2AgBQBtn4nNAFyuwbAIFGBAzh+yDYAqXkepAZbYDCAQY//RBQ6Q7QKkqCTfBVDBq2S7AASACSaBIheAkixQ4gnZLoC6IpMiA2AZh2wDkP1IjAEAOdubTOHEWpEAAAAASUVORK5CYII=">
-  <h1>
-    <% if (Nevernote.currentNotebook === null) { %>
-      <%= "All Notes" %>
-    <% } else {  %>
-      <%= Nevernote.currentNotebook.escape('name') %>
-    <% } %>
-  </h1>
+  <% if (Nevernote.currentNotebook === null) { %>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAlUlEQVR42mNgwAIWL16svnz58jnLli37CcSlDMQCoGJLIF4HxP+R8PNVq1ax4dUItM0bqPAwmkY4Xrp0aTI+W8+ga2AgBQBtn4nNAFyuwbAIFGBAzh+yDYAqXkepAZbYDCAQY//RBQ6Q7QKkqCTfBVDBq2S7AASACSaBIheAkixQ4gnZLoC6IpMiA2AZh2wDkP1IjAEAOdubTOHEWpEAAAAASUVORK5CYII=">
+    <h1>All Notes</h1>
+  <% } else {  %>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAVUlEQVR42mNgGFSguL5Nq7C2bSkQ/ycCH8AwACh4tbCuPZAYy4BqH2IT/IBuE5o8XGzUgCFlQEFdq3dBbdsZUPogywBseHAYAPTWRmwGPCHCgM/IegAsqyv9CNAK4AAAAABJRU5ErkJggg==">
+    <h1><%= Nevernote.currentNotebook.escape('name') %></h1>
+  <% } %>
 </header>
 <ul>
   <% Nevernote.notes.each(function(note) { %>
