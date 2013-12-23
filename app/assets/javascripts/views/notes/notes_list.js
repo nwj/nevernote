@@ -13,7 +13,6 @@ Nevernote.Views.NotesList = Support.CompositeView.extend({
   },
 
   render: function() {
-    console.log("Notes list rendering");
     this.$el.html(JST['notes/list']());
 
     return this;

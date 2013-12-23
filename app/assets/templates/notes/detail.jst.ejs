@@ -6,9 +6,11 @@
     <% var title = Nevernote.note.escape('title') %>
     <div class="note-title">
         <h2><%= title %></h2>
-        <input type="text" name="note[title]" value="<%= title %>" class="hide">
+        <input type="text" name="title" value="<%= title %>" class="hide">
     </div>
+    <% var content = Nevernote.note.escape('content') %>
     <div class="note-body">
-        <%= Nevernote.note.escape('content') %>
+        <p><%= content %></p>
+        <input type="text" name="content" value="<%= content %>" class="hide">
     </div>
 </section>
