@@ -8,6 +8,7 @@ Nevernote.Views.NoteDetail = Support.CompositeView.extend({
   },
 
   events: {
+    "click .delete-note" : "delete",
     "click .note-title > h2" : "edit",
     "blur .note-title > .input" : "saveTitle",
     "click .note-body > p" : "edit",
@@ -18,6 +19,13 @@ Nevernote.Views.NoteDetail = Support.CompositeView.extend({
     this.$el.html(JST['notes/detail']());
 
     return this;
+  },
+
+  delete: function(event) {
+    var view = new Nevernote.Views.NoteDelete();
+    var container = $('#lightbox');
+    container.html(view.render().$el)
+    container.toggleClass('hide');
   },
 
   edit: function(event) {
