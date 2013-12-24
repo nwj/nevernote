@@ -9,9 +9,9 @@ Nevernote.Views.NoteDetail = Support.CompositeView.extend({
 
   events: {
     "click .note-title > h2" : "edit",
-    "blur .note-title > .input" : "saveEdit",
+    "blur .note-title > .input" : "saveTitle",
     "click .note-body > p" : "edit",
-    "blur .note-body > .input" : "saveEdit"
+    "blur .note-body > .input" : "saveBody"
   },
 
   render: function() {
@@ -27,8 +27,23 @@ Nevernote.Views.NoteDetail = Support.CompositeView.extend({
     inputEl.focus();
   },
 
-  saveEdit: function(event) {
+  saveTitle: function(event) {
     var formData = $(event.target).serializeJSON();
+
+    Nevernote.note.save(formData, {
+      wait: true,
+      success: function() {
+        Nevernote.notes.add(Nevernote.note, {merge: true});
+      }
+    });
+
+    $(event.currentTarget).toggleClass('hide');
+    $(event.currentTarget).parent().find('.input').toggleClass('hide');
+  },
+
+  saveBody: function(event) {
+    var formData = {content: $(event.target).html()}
+
     Nevernote.note.save(formData, {
       wait: true,
       success: function() {
@@ -39,5 +54,4 @@ Nevernote.Views.NoteDetail = Support.CompositeView.extend({
     $(event.currentTarget).toggleClass('hide');
     $(event.currentTarget).parent().find('.input').toggleClass('hide');
   }
-
 });

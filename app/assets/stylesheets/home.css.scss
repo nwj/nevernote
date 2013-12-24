@@ -258,7 +258,11 @@ header.sub-header button {
   background: white;
   border: 1px solid #e6e6e6;
   border-radius: 3px;
+}
+
+#note-detail .note-content p {
   min-height: 260px;
+  outline: none;
 }
 
 

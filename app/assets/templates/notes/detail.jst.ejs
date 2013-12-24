@@ -11,8 +11,8 @@
     <% var content = Nevernote.note.escape('content') %>
     <div class="note-body">
         <p><%= content %></p>
-        <textarea name="content" class="input hide">
+        <p name="content" class="input hide" contenteditable="true">
             <%= content %>
-        </textarea>
+        </p>
     </div>
 </section>
