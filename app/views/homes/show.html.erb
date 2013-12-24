@@ -45,12 +45,15 @@
 
 <script>
   $(document).ready(function(){
-    var data = JSON.parse($('#bootstrap').text());
-    Nevernote.initialize(data);
+    //Click handler for account menu
     $('.account-button').click(function(event) {
         $('.account-button').toggleClass('on');
         $('.account-menu').toggleClass('hide');
     })
+
+    //Backbone initialization
+    var data = JSON.parse($('#bootstrap').text());
+    Nevernote.initialize(data);
   });
 </script>
 <% end %>

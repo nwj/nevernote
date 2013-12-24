@@ -6,6 +6,12 @@ Nevernote.Views.NotesList = Support.CompositeView.extend({
     this.bindTo(Nevernote.notes, "remove", this.render);
     this.bindTo(Nevernote.notes, "change", this.render);
     this.bindTo(Nevernote.notes, "reset", this.render);
+
+    $(window).on('resize', function() {
+      var windowHeight = $(window).height();
+      $('#notes-list').height(windowHeight - 86);
+      $('#notes-list').find('ul').height(windowHeight - 126);
+    });
   },
 
   events: {

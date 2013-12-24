@@ -5,6 +5,11 @@ Nevernote.Views.NoteDetail = Support.CompositeView.extend({
     this.bindTo(Nevernote.note, "add", this.render);
     this.bindTo(Nevernote.note, "remove", this.render);
     this.bindTo(Nevernote.note, "change", this.render);
+
+    $(window).on('resize', function() {
+      var windowHeight = $(window).height();
+      $('#note-detail').height(windowHeight - 86);
+    });
   },
 
   events: {

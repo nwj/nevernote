@@ -1,4 +1,10 @@
 Nevernote.Views.Sidebar = Support.CompositeView.extend({
+  initialize: function() {
+    $(window).on('resize', function() {
+      var windowHeight = $(window).height();
+      $('#sidebar').height(windowHeight - 86);
+    });
+  },
 
   events: {
     "click .dropdown-button": "toggleDropdown",
