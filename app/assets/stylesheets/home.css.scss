@@ -253,6 +253,69 @@ header.sub-header button {
   width: 650px;
 }
 
+#note-detail .note-toolbar {
+  border-bottom: 1px solid #e6e6e6;
+}
+
+#note-detail .note-toolbar ul {
+  float: right;
+}
+
+#note-detail .note-toolbar ul li {
+  float: left;
+}
+
+#note-detail .note-toolbar button {
+  color: #7A7D81;
+  font-size: 12px;
+  text-transform: uppercase;
+  background: none;
+  padding: 10px;
+  outline: none;
+}
+
+#note-detail .note-toolbar button:hover {
+  color: #525f67;
+}
+
+#note-detail .note-toolbar button h3 {
+  float: left;
+  margin-right: 3px;
+}
+
+#note-detail .note-toolbar button img {
+  float: left;
+}
+
+#note-detail .note-toolbar button div {
+  float: left;
+  height: 16px;
+  width: 16px;
+}
+
+#note-detail .note-toolbar button div.info {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA0UlEQVR42mNgGHRg1apVbMtWr89dvnr9MSD+DMXHQGIgObyal6xdK7Ni9fpLQA3/sWGQHEgNTpvRNS9ZudZ6+eoNVuiGbNu2jR3DAKiz0WzdYLVs1TpLDPGV6/IwDID6+T9ReM2G49gM+IysCCGO6gUo/kzQAKDG62CvrVmjQZwBQGehKFq7sQksvnJtLVFeQA/EJas26ILEsUXr0lXr84mIxg1WSN5Dsn395fnz53PgTEggBbhDf/1lnAkJBkCmg5wIDRNIUgaygV4swGnzgAIA2Mpbrwd5idkAAAAASUVORK5CYII=)
+    no-repeat
+    left center;
+}
+
+#note-detail .note-toolbar button:hover div.info {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAxklEQVR42mNgGHQgNDSULSguPTcwPv0YkP4MwlB2LkgOr+ag6BQZoOJLQfHp/7FhsBxQDU6bMTVnWPvHpFqhG+KZm8uOaTvQieg2gjQHxqVbYrokLQ/DALA/cTgdCz6OzQWfkRXBxNG9AMZAtQQNAOLrIPHghDQN4gwAOgtVUUYTxOC0WmK9gBKI/glputCwwYjWgLj0fILRCPI7kuuQnX85ISGBA2dCAinAGfogOVwJCQZApoOcCA4TaFIGs2PTCnDaPKAAAKnX6Z8csetKAAAAAElFTkSuQmCC)
+    no-repeat
+    left center;
+}
+
+#note-detail .note-toolbar button div.trash {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAuklEQVR42mNgwAGmzZp9ZNrMWf+R8FEGUgBIEz4+VjB1xuy46bNmrQQqPg+19S+U/gelTwHl50+bOTMep63EYuwumD4rAWjD6mmzZl2cNnP2G6DCb1AN38B8oDhYfsaMRHzeCAHRM2fOlJw7dy4vWGzqVJ5J8+aJzpgxQx9oSTRRgYfD6VcJBiayAfjoUQNobcD0mbPmgmhg/Esg08DEtJgIA2ZmAxXtBip+BKQ/Q+P/M5S/GyTPQE0AAOsgDqnmYoq/AAAAAElFTkSuQmCC)
+    no-repeat
+    left center;
+}
+
+#note-detail .note-toolbar button:hover div.trash {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAv0lEQVR42mNgwAGC4tOPAPF/OI7LOMpACgBpwsfHCgLj0+OAeCUQn4fa/BdEB8al/4PwM04B6fmBcWnxOG0lFmM3ICEjASi5Oig+7SKQfhMUl/4N4n8w/QYqvhrowkTcfo9LDwHTMWmSfklJvCB2aGgWT2hiomhgTLp+YHxGNFGBh83ZQJuvEgxMZAPw0aMG0NqAwLiMuSA6NCFLApkGRuNiggYExqdlA9P8bqDiR8BE9RmaEj+D+WDxtGwGagIAo3zHUGhlAFQAAAAASUVORK5CYII=)
+    no-repeat
+    left center;
+}
 #note-detail .note-content {
   margin: 12px;
   background: white;
