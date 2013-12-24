@@ -8,7 +8,10 @@ Nevernote.Views.NoteDetail = Support.CompositeView.extend({
 
     $(window).on('resize', function() {
       var windowHeight = $(window).height();
+      var windowWidth = $(window).width();
       $('#note-detail').height(windowHeight - 86);
+      $('#note-detail').width(windowWidth - 596);
+      $('.note-content-wrapper').height(windowHeight - 123);
     });
   },
 

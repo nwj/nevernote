@@ -352,8 +352,13 @@ header.sub-header button {
     no-repeat
     left center;
 }
+
+#note-detail .note-content-wrapper {
+  overflow-y: auto;
+}
+
 #note-detail .note-content {
-  margin: 12px;
+  margin: 15px;
   background: white;
   border: 1px solid #e6e6e6;
   border-radius: 3px;

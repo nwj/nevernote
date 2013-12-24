@@ -16,17 +16,19 @@
 </header>
 <header class="note-sub-toolbar">
 </header>
-<section class="note-content">
-    <% var title = Nevernote.note.escape('title') %>
-    <div class="note-title">
-        <h2><%= title %></h2>
-        <input type="text" name="title" value="<%= title %>" class="input hide">
-    </div>
-    <% var content = Nevernote.note.escape('content') %>
-    <div class="note-body">
-        <p><%= content %></p>
-        <p name="content" class="input hide" contenteditable="true">
-            <%= content %>
-        </p>
-    </div>
-</section>
+<div class="note-content-wrapper">
+    <section class="note-content">
+        <% var title = Nevernote.note.escape('title') %>
+        <div class="note-title">
+            <h2><%= title %></h2>
+            <input type="text" name="title" value="<%= title %>" class="input hide">
+        </div>
+        <% var content = Nevernote.note.escape('content') %>
+        <div class="note-body">
+            <p><%= content %></p>
+            <p name="content" class="input hide" contenteditable="true">
+                <%= content %>
+            </p>
+        </div>
+    </section>
+</div>
