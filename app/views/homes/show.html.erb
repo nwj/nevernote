@@ -10,7 +10,26 @@
     <img src="http://www.evernote.com/redesign/global/img/badge-free.png">
     <h3><%= current_user.username %></h3>
     <img class="dropdown-arrow" src="https://www.evernote.com/redesign/global/img/menu-dropdown-arrow-white.png">
-    <%= button_to "Log Out", session_url, method: :delete %>
+    <ul class="account-menu hide">
+        <li>
+            <a class="group" href="#">
+                <img src="https://www.evernote.com/redesign/global/img/icon-settings.png">
+                <h3>Settings</h3>
+            </a>
+        </li>
+        <li>
+            <a class="group" href="#">
+                <img src="https://www.evernote.com/redesign/global/img/icon-help.png">
+                <h3>About</h3>
+            </a>
+        </li>
+        <li>
+            <a class="group" href="<%= session_url %>" data-method="delete" rel="no-follow">
+                <img src="https://www.evernote.com/redesign/global/img/icon-logout.png">
+                <h3>Log Out</h3>
+            </a>
+        </li>
+    </ul>
   </div>
 </header>
 
@@ -28,6 +47,10 @@
   $(document).ready(function(){
     var data = JSON.parse($('#bootstrap').text());
     Nevernote.initialize(data);
+    $('.account-button').click(function(event) {
+        $('.account-button').toggleClass('on');
+        $('.account-menu').toggleClass('hide');
+    })
   });
 </script>
 <% end %>
