@@ -20,7 +20,9 @@ Nevernote.Views.NoteDetail = Support.CompositeView.extend({
     "click .note-title > h2" : "edit",
     "blur .note-title > .input" : "saveTitle",
     "click .note-body > p" : "edit",
-    "blur .note-body > .input" : "saveBody"
+    "blur .note-body > .input" : "saveBody",
+    "click .notebook-selector-button" : "selectNotebook",
+    "click .notebook-selector li" : "changeNotebook"
   },
 
   render: function() {
@@ -69,5 +71,21 @@ Nevernote.Views.NoteDetail = Support.CompositeView.extend({
 
     $(event.currentTarget).toggleClass('hide');
     $(event.currentTarget).parent().find('.input').toggleClass('hide');
+  },
+
+  selectNotebook: function(event) {
+    $('.notebook-selector ul').toggleClass('hide');
+  },
+
+  changeNotebook: function(event) {
+    var new_notebook_id = $(event.currentTarget).attr('data-id');
+
+    Nevernote.note.save({notebook_id: new_notebook_id}, {
+        success: function() {
+            Nevernote.notebooks.fetch();
+        }
+    });
+
+    $('.notebook-selector ul').toggleClass('hide');
   }
 });

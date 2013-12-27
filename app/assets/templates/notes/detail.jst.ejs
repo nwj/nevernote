@@ -1,4 +1,20 @@
 <header class="note-toolbar group">
+  <div class="notebook-selector">
+    <div class="notebook-selector-button group">
+        <% var notebook_id = Nevernote.note.get('notebook_id') %>
+        <h3>
+            <%= Nevernote.notebooks.get(notebook_id).escape('name') %>
+        </h3>
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAHCAYAAAArkDztAAAAQklEQVR42mNgwAXq6+vn1NXVOcL4IHZDQ8NcBiARBsRvgQrMamtrTUFsoGQ4TFUyUOAlCAMVpKAYCZQsBAoWMZANADXWH/e+NBrMAAAAAElFTkSuQmCC">
+    </div>
+    <ul class="hide">
+        <% Nevernote.notebooks.each(function(notebook) { %>
+            <li data-id="<%= notebook.get('id') %>">
+                <%= notebook.escape('name') %>
+            </li>
+        <% }) %>
+    </ul>
+  </div>
   <ul class="group">
     <li>
         <button class="delete-note group">

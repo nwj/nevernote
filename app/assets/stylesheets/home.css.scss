@@ -293,11 +293,55 @@ header.sub-header button {
   border-bottom: 1px solid #e6e6e6;
 }
 
-#note-detail .note-toolbar ul {
+#note-detail .note-toolbar .notebook-selector {
+  position: relative;
+  font-size: 12px;
+  color: #7A7D81;
+}
+
+#note-detail .notebook-selector-button {
+  padding: 10px;
+  margin-left: 10px;
+  float: left;
+}
+
+#note-detail .notebook-selector-button:hover {
+  color: #525f67;
+}
+
+#note-detail .notebook-selector-button h3 {
+  float: left;
+  padding-right: 5px;
+}
+
+#note-detail .notebook-selector-button img {
+  float: left;
+  padding-top: 5px;
+}
+
+#note-detail .note-toolbar .notebook-selector ul {
+  position: absolute;
+  top: 30px;
+  left: 50px;
+  background: #f4f6f7;
+  border: 1px solid #b5b5b5;
+  border-radius: 5px;
+  padding: 5px 0;
+}
+
+#note-detail .note-toolbar .notebook-selector ul li {
+  padding: 2px 7px;
+}
+
+#note-detail .note-toolbar .notebook-selector ul li:hover {
+  background: #d1d4d7;
+}
+
+#note-detail .note-toolbar > ul {
   float: right;
 }
 
-#note-detail .note-toolbar ul li {
+#note-detail .note-toolbar > ul > li {
   float: left;
 }
 
