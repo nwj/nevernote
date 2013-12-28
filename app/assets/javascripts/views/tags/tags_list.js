@@ -37,7 +37,9 @@ Nevernote.Views.TagsList = Support.CompositeView.extend({
             }
 
             Nevernote.notes.reset(notes);
-            Nevernote.note.set(Nevernote.notes.at(0).attributes);
+            if (Nevernote.notes.at(0) !== undefined) {
+                Nevernote.note.set(Nevernote.notes.at(0).attributes);
+            }
         }
     });
   },
