@@ -10,6 +10,7 @@ window.Nevernote = {
     this.notes = new Nevernote.Collections.Notes(data.notes);
     this.note = new Nevernote.Models.Note(this.notes.at(0).attributes)
     this.currentNotebook = null;
+    this.currentTag = null;
 
     this.notebooks = new Nevernote.Collections.Notebooks();
     this.notebooks.fetch({

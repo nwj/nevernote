@@ -9,9 +9,23 @@ Nevernote.Views.TagsList = Support.CompositeView.extend({
   },
 
   events: {
+    "click .show" : "show",
     "click .new" : "new",
     "click .rename": "rename",
     "click .delete": "delete"
+  },
+
+  show: function(event) {
+    event.preventDefault();
+    var tag = Nevernote.tags.get($(event.currentTarget).attr('data-id'))
+    Nevernote.currentTag = tag;
+
+    //notebook.fetch({
+        //success: function() {
+            //Nevernote.notes.reset(notebook.get('notes').models);
+            //Nevernote.note.set(Nevernote.notes.at(0).attributes);
+        //}
+    //});
   },
 
   render: function() {
