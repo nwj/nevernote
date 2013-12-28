@@ -15,7 +15,8 @@ Nevernote.Views.NotesList = Support.CompositeView.extend({
   },
 
   events: {
-    "click .show" : "show"
+    "click .show" : "show",
+    "click .current-tag > button" : "removeTag"
   },
 
   render: function() {
@@ -28,6 +29,21 @@ Nevernote.Views.NotesList = Support.CompositeView.extend({
     event.preventDefault();
     var note = Nevernote.notes.get($(event.currentTarget).attr('data-id'))
     Nevernote.note.set(note.attributes);
+  },
+
+  removeTag: function() {
+    Nevernote.currentTag = null;
+
+    if (Nevernote.currentNotebook === null) {
+      Nevernote.notes.fetch({
+        success: function() {
+          Nevernote.note.set(Nevernote.notes.at(0).attributes)
+        }
+      });
+    } else {
+      Nevernote.notes.reset(Nevernote.currentNotebook.get('notes').models);
+      Nevernote.note.set(Nevernote.notes.at(0).attributes)
+    };
   }
 
 });
