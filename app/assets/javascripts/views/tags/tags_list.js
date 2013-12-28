@@ -15,6 +15,12 @@ Nevernote.Views.TagsList = Support.CompositeView.extend({
     "click .delete": "delete"
   },
 
+  render: function() {
+    this.$el.html(JST['tags/list']());
+
+    return this;
+  },
+
   show: function(event) {
     event.preventDefault();
     var tag = Nevernote.tags.get($(event.currentTarget).attr('data-id'))
@@ -22,17 +28,18 @@ Nevernote.Views.TagsList = Support.CompositeView.extend({
 
     Nevernote.currentTag.fetch({
         success: function() {
-            console.log(Nevernote.currentTag)
-            Nevernote.notes.fetch();
-            //Nevernote.note.set(Nevernote.notes.at(0).attributes);
+            if ( Nevernote.currentNotebook === null ) {
+                var notes = Nevernote.currentTag.get('notes').models;
+            } else {
+                var notes = Nevernote.currentTag.get('notes');
+                var currentNotebookId = Nevernote.currentNotebook.get('id');
+                notes = notes.where({notebook_id: currentNotebookId});
+            }
+
+            Nevernote.notes.reset(notes);
+            Nevernote.note.set(Nevernote.notes.at(0).attributes);
         }
     });
-  },
-
-  render: function() {
-    this.$el.html(JST['tags/list']());
-
-    return this;
   },
 
   new: function(event) {

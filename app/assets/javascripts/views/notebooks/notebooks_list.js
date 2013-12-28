@@ -31,7 +31,15 @@ Nevernote.Views.NotebooksList = Support.CompositeView.extend({
 
     notebook.fetch({
         success: function() {
-            Nevernote.notes.reset(notebook.get('notes').models);
+            if ( Nevernote.currentTag !== null ) {
+                var notes = Nevernote.currentTag.get('notes');
+                var currentNotebookId = Nevernote.currentNotebook.get('id');
+                notes = notes.where({notebook_id: currentNotebookId});
+            } else {
+                var notes = Nevernote.currentNotebook.get('notes').models;
+            }
+
+            Nevernote.notes.reset(notes);
             Nevernote.note.set(Nevernote.notes.at(0).attributes);
         }
     });
@@ -41,11 +49,17 @@ Nevernote.Views.NotebooksList = Support.CompositeView.extend({
     event.preventDefault();
     Nevernote.currentNotebook = null;
 
-    Nevernote.notes.fetch({
-        success: function() {
-            Nevernote.note.set(Nevernote.notes.at(0).attributes);
-        }
-    });
+    if (Nevernote.currentTag !== null) {
+        var notes = Nevernote.currentTag.get('notes').models;
+        Nevernote.notes.reset(notes);
+        Nevernote.note.set(Nevernote.notes.at(0).attributes);
+    } else {
+        Nevernote.notes.fetch({
+            success: function() {
+                Nevernote.note.set(Nevernote.notes.at(0).attributes);
+            }
+        });
+    };
   },
 
   new: function(event) {
