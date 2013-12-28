@@ -20,12 +20,13 @@ Nevernote.Views.TagsList = Support.CompositeView.extend({
     var tag = Nevernote.tags.get($(event.currentTarget).attr('data-id'))
     Nevernote.currentTag = tag;
 
-    //notebook.fetch({
-        //success: function() {
-            //Nevernote.notes.reset(notebook.get('notes').models);
+    Nevernote.currentTag.fetch({
+        success: function() {
+            console.log(Nevernote.currentTag)
+            Nevernote.notes.fetch();
             //Nevernote.note.set(Nevernote.notes.at(0).attributes);
-        //}
-    //});
+        }
+    });
   },
 
   render: function() {

@@ -228,16 +228,42 @@ header.sub-header button {
   border-bottom: 1px solid #b3b3b3;
 }
 
+#notes-list header .current-notebook {
+  float: left;
+}
 
-#notes-list header img {
+#notes-list header .current-notebook img {
   float: left;
   margin-right: 5px;
 }
 
-#notes-list header h1 {
+#notes-list header .current-notebook h1 {
   float: left;
   font-size: 16px;
   color: #6a6a6a;
+}
+
+#notes-list header .current-tag {
+  float: left;
+  margin-left: 15px;
+  background: #cddde5;
+  padding: 2px 10px;
+  border-radius: 10px;
+
+}
+
+#notes-list header .current-tag h2 {
+  float: left;
+  font-size: 12px;
+  color: #6a6a6a;
+  margin-right: 5px;
+}
+
+#notes-list header .current-tag button {
+  float: left;
+  font-size: 12px;
+  color: #6a6a6a;
+  background: none;
 }
 
 #notes-list ul {
