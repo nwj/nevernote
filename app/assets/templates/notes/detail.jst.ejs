@@ -17,10 +17,22 @@
   </div>
   <ul class="group">
     <li>
-        <button class="delete-note group">
+        <button class="note-info group">
             <h3>Info</h3>
             <div class="info"></div>
         </button>
+        <ul class="note-info-dropdown">
+            <li>
+                Title: <%= Nevernote.note.escape('title') %>
+            </li>
+            <li>
+                Notebook: <%= Nevernote.notebooks.get(notebook_id).escape('name') %>
+            </li>
+            <li>
+                URL:
+                <input type="text" name="url" value="<%= Nevernote.note.escape('url') %>">
+            </li>
+        </ul>
     </li>
     <li>
         <button class="delete-note group">
