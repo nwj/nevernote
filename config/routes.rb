@@ -1,13 +1,4 @@
 Nevernote::Application.routes.draw do
-  # Temporary non-api routes. For testing purposes only.
-  resources :notebooks do
-    get 'rename', on: :member
-  end
-  resources :tags
-  resources :notes, except: [:new] do
-    resources :taggings, only: [:create, :destroy]
-  end
-
   # API routes. Backbone plugs in here.
   namespace 'api', defaults: {format: :json} do
     resources :notebooks, except: [:new, :edit]
