@@ -1,0 +1,47 @@
+<% content_for :head do %>
+    <%= stylesheet_link_tag "login" %>
+<% end %>
+
+<% content_for :body do %>
+<header class="header group">
+    <a href="<%= new_session_url %>" class="logo">
+        <div class="logo-image">
+            <img src="https://www.evernote.com/redesign/global/img/evernote-logo.png">
+        </div>
+        <h1 class="logo-text">
+        Nevernote
+        </h1>
+    </a>
+</header>
+<section class="main group">
+    <header>
+        <h1>About this App</h1>
+    </header>
+    <div>
+      <p>
+      Nevernote is a reproduction of the popular note-taking app
+      <a href="http://www.evernote.com">Evernote</a>. It was built by Nick
+      Willett-Jeffries in 2013 as his final project for App Academy. The app
+      relies upon a number of key technologies including:
+      </p>
+      <ul>
+        <li>Ruby on Rails</li>
+        <li>Backbone.js</li>
+        <li>PostgreSQL</li>
+      </ul>
+
+      <p>
+      More information about Nick is available at
+      <a href="http://nwj.cc">nwj.cc</a>.
+      </p>
+    </div>
+</section>
+<footer class="footer">
+    <nav>
+        <ul class="group">
+            <li><a href="/about">About</a></li>
+            <li>Built by NWJ 2013.</li>
+        </ul>
+    </nav>
+</footer>
+<% end %>

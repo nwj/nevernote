@@ -10,6 +10,7 @@ Nevernote::Application.routes.draw do
 
   # Non-API, non-Backbone routes.
   resource :home, only: [:show]
+  resource :about, only: [:show]
   resources :users, only: [:new, :create]
   resource :session, only: [:new, :create, :destroy]
   root to: "landing#show"
