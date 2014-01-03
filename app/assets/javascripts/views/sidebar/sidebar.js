@@ -16,6 +16,11 @@ Nevernote.Views.Sidebar = Support.CompositeView.extend({
     this.renderNotebooks();
     this.renderTags();
 
+    setTimeout(function() {
+      var windowHeight = $(window).height();
+      $('#sidebar').height(windowHeight - 86);
+    }, 0);
+
     return this;
   },
 

@@ -22,6 +22,12 @@ Nevernote.Views.NotesList = Support.CompositeView.extend({
   render: function() {
     this.$el.html(JST['notes/list']());
 
+    setTimeout(function() {
+      var windowHeight = $(window).height();
+      $('#notes-list').height(windowHeight - 86);
+      $('#notes-list').find('ul').height(windowHeight - 126);
+    }, 0);
+
     return this;
   },
 
