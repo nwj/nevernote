@@ -1,6 +1,7 @@
 Nevernote::Application.routes.draw do
   # API routes. Backbone plugs in here.
   namespace 'api', defaults: {format: :json} do
+    #resources :users, only: [:show, :update]
     resources :notebooks, except: [:new, :edit]
     resources :tags, except: [:new, :edit]
     resources :notes, except: [:new, :edit] do
@@ -9,9 +10,10 @@ Nevernote::Application.routes.draw do
   end
 
   # Non-API, non-Backbone routes.
-  resource :home, only: [:show]
-  resource :about, only: [:show]
   resources :users, only: [:new, :create]
   resource :session, only: [:new, :create, :destroy]
+  resource :home, only: [:show]
+  resource :about, only: [:show]
+
   root to: "landing#show"
 end
