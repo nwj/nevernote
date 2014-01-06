@@ -11,5 +11,6 @@ class Api::UsersController < ApplicationController
       render :show
     else
       render json: @user.errors.full_messages
+    end
   end
 end

@@ -1,7 +1,7 @@
 Nevernote::Application.routes.draw do
   # API routes. Backbone plugs in here.
   namespace 'api', defaults: {format: :json} do
-    #resources :users, only: [:show, :update]
+    resources :users, only: [:show, :update]
     resources :notebooks, except: [:new, :edit]
     resources :tags, except: [:new, :edit]
     resources :notes, except: [:new, :edit] do
