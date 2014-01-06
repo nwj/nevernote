@@ -1,5 +1,5 @@
 class Api::NotebooksController < ApplicationController
-  include NotebooksHelper
+  include UsersHelper
   include NotesHelper
 
   before_filter(except: [:index, :create]) { |c| c.require_ownership("Notebook") }
