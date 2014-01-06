@@ -3,25 +3,46 @@ window.Nevernote = {
   Collections: {},
   Views: {},
   Routers: {},
+
   initialize: function(data) {
     var self = this;
 
-    this.tags = new Nevernote.Collections.Tags(data.tags);
-    this.notes = new Nevernote.Collections.Notes(data.notes);
-    this.note = new Nevernote.Models.Note(this.notes.at(0).attributes)
-    this.currentNotebook = null;
-    this.currentTag = null;
+    function bootstrapUser() {
+      self.user = new self.Models.User();
+      return self.user.fetch();
+    };
 
-    this.notebooks = new Nevernote.Collections.Notebooks();
-    this.notebooks.fetch({
-        success: function() {
-            self.defaultNotebook = self.notebooks.findWhere({default: true})
-            new Nevernote.Routers.Home();
-            if (!Backbone.history.started) {
-                Backbone.history.start();
-                Backbone.history.started = true;
-            }
-        }
+    function bootstrapNotebooks() {
+      self.notebooks = new self.Collections.Notebooks();
+      return self.notebooks.fetch();
+    }
+
+    function bootstrapNotes() {
+      self.notes = new self.Collections.Notes();
+      return self.notes.fetch();
+    }
+
+    function bootstrapTags() {
+      self.tags = new self.Collections.Tags();
+      return self.tags.fetch();
+    }
+
+    $.when(
+      bootstrapUser(),
+      bootstrapNotebooks(),
+      bootstrapNotes(),
+      bootstrapTags()
+    ).done(function() {
+      self.note = new self.Models.Note(self.notes.at(0).attributes);
+      self.defaultNotebook = self.notebooks.get(self.user.get('notebook_id'));
+      self.currentNotebook = null;
+      self.currentTag = null;
+
+      new self.Routers.Home();
+      if (!Backbone.history.started) {
+        Backbone.history.start();
+        Backbone.history.started = true;
+      };
     });
-  },
+  }
 };
