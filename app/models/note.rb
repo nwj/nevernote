@@ -18,7 +18,15 @@ class Note < ActiveRecord::Base
     dependent: :destroy
   )
 
-  has_many :tags, through: :taggings, source: :tag
+  has_many(
+    :tags, 
+    through: :taggings, 
+    source: :tag
+  )
 
-  has_one :owner, through: :notebook, source: :owner
+  has_one(
+    :owner,
+    through: :notebook,
+    source: :owner
+  )
 end

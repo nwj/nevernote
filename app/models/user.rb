@@ -34,7 +34,11 @@ class User < ActiveRecord::Base
     dependent: :destroy
   )
 
-  has_many :notes, through: :notebooks, source: :notes
+  has_many(
+    :notes, 
+    through: :notebooks, 
+    source: :notes
+  )
 
   def self.find_by_credentials(email_or_username, password)
     if email_or_username.include?('@')

@@ -19,5 +19,9 @@ class Tag < ActiveRecord::Base
     dependent: :destroy
   )
 
-  has_many :notes, through: :taggings, source: :note
+  has_many(
+    :notes,
+    through: :taggings,
+    source: :note
+  )
 end
