@@ -5,7 +5,7 @@ window.Nevernote = {
   Routers: {},
   initialize: function(data) {
     var self = this;
-    
+
     this.tags = new Nevernote.Collections.Tags(data.tags);
     this.notes = new Nevernote.Collections.Notes(data.notes);
     this.note = new Nevernote.Models.Note(this.notes.at(0).attributes)
