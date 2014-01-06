@@ -18,7 +18,7 @@ class Tagging < ActiveRecord::Base
     primary_key: :id
   )
 
-  has_one 
+  has_one(
     :owner, 
     through: :note, 
     source: :owner
