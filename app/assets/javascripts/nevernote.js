@@ -33,7 +33,11 @@ window.Nevernote = {
       bootstrapNotes(),
       bootstrapTags()
     ).done(function() {
-      self.note = new self.Models.Note(self.notes.at(0).attributes);
+      if (self.notes.length > 0) {
+        self.note = new self.Models.Note(self.notes.at(0).attributes);
+      } else {
+        self.note = new self.Models.Note();
+      };
       self.defaultNotebook = self.notebooks.get(self.user.get('notebook_id'));
       self.currentNotebook = null;
       self.currentTag = null;
