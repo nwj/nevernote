@@ -1,53 +1,43 @@
 <% content_for :head do %>
-    <%= stylesheet_link_tag('home') %>
+  <%= stylesheet_link_tag('home') %>
 <% end %>
 
 <% content_for :body do %>
-<% current = {notebook_id: params[:notebook_id], note_id: params[:note_id]} %>
+  <header class="header group">
+    <div class="account-button group">
+      <img src="http://www.evernote.com/redesign/global/img/badge-free.png">
+      <h3><%= current_user.username %></h3>
+      <img class="dropdown-arrow" src="https://www.evernote.com/redesign/global/img/menu-dropdown-arrow-white.png">
+      <ul class="account-menu hide">
+        <li>
+          <a class="group" href="/about">
+            <img src="https://www.evernote.com/redesign/global/img/icon-help.png">
+            <h3>About</h3>
+          </a>
+        </li>
+        <li>
+          <a class="group" href="<%= session_url %>" data-method="delete" rel="no-follow">
+            <img src="https://www.evernote.com/redesign/global/img/icon-logout.png">
+            <h3>Log Out</h3>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </header>
 
-<header class="header group">
-  <div class="account-button group">
-    <img src="http://www.evernote.com/redesign/global/img/badge-free.png">
-    <h3><%= current_user.username %></h3>
-    <img class="dropdown-arrow" src="https://www.evernote.com/redesign/global/img/menu-dropdown-arrow-white.png">
-    <ul class="account-menu hide">
-        <li>
-            <a class="group" href="/about">
-                <img src="https://www.evernote.com/redesign/global/img/icon-help.png">
-                <h3>About</h3>
-            </a>
-        </li>
-        <li>
-            <a class="group" href="<%= session_url %>" data-method="delete" rel="no-follow">
-                <img src="https://www.evernote.com/redesign/global/img/icon-logout.png">
-                <h3>Log Out</h3>
-            </a>
-        </li>
-    </ul>
+  <div id="content" class="group">
   </div>
-</header>
 
-<div id="content" class="group">
-</div>
-
-<script type="text/json" id="bootstrap">
-  {
-    "tags": <%= @tags_json.html_safe %>,
-    "notes": <%= @notes_json.html_safe %>
-  }
-</script>
-
-<script>
-  $(document).ready(function(){
-    //Click handler for account menu
-    $('.account-button').click(function(event) {
+  <script>
+    $(document).ready(function() {
+      //Click handler for account menu
+      $('.account-button').click(function(event) {
         $('.account-button').toggleClass('on');
         $('.account-menu').toggleClass('hide');
-    })
+      })
 
-    //Backbone initialization
-    var data = JSON.parse($('#bootstrap').text());
-    Nevernote.initialize(data);
-  });
-</script>
+      //Backbone initialization
+      Nevernote.initialize();
+    });
+  </script>
 <% end %>

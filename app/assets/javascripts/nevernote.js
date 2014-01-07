@@ -4,7 +4,7 @@ window.Nevernote = {
   Views: {},
   Routers: {},
 
-  initialize: function(data) {
+  initialize: function() {
     var self = this;
 
     function bootstrapUser() {
