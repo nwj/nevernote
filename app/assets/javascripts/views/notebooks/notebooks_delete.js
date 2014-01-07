@@ -20,7 +20,9 @@ Nevernote.Views.NotebookDelete = Backbone.View.extend({
       Nevernote.currentNotebook = null;
       Nevernote.notes.fetch({
         success: function() {
-            Nevernote.note = Nevernote.notes.at(0)
+            Nevernote.currentNote.clear({silent: true});
+            Nevernote.currentNote.set({id: Nevernote.notes.at(0).get('id')});
+            Nevernote.currentNote.fetch();
         }
       });
     };

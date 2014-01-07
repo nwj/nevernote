@@ -1,5 +1,5 @@
 object @note
-attributes :id, :title, :body, :url
+attributes :id, :title, :body, :url, :notebook_id
 node :created_short do |n|
   n.created_at.strftime("%b %d, %Y")
 end
@@ -12,15 +12,15 @@ end
 node :modified_long do |n|
   n.updated_at.strftime("%A, %B %e %Y, %l:%M %p")
 end
-child(@notebooks) do
-  attributes :id, :name
-  node :parent do |n|
-    @note.notebook == n
-  end
-end
-child(@taggings) do
-  attributes :id
-  node :tag_name do |t|
-    t.tag.name
-  end
-end
+#child(@notebooks) do
+  #attributes :id, :name
+  #node :parent do |n|
+    #@note.notebook == n
+  #end
+#end
+#child(@taggings) do
+  #attributes :id
+  #node :tag_name do |t|
+    #t.tag.name
+  #end
+#end

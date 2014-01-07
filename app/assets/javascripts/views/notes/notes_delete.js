@@ -8,7 +8,7 @@ Nevernote.Views.NoteDelete = Backbone.View.extend({
 
   render: function() {
     this.$el.html(JST['notes/delete']({
-        note: Nevernote.note
+        note: Nevernote.currentNote
     }));
 
     return this;
@@ -16,14 +16,16 @@ Nevernote.Views.NoteDelete = Backbone.View.extend({
 
   save: function(event) {
     event.preventDefault();
-    Nevernote.note.destroy({
+    Nevernote.currentNote.destroy({
         success: function() {
             Nevernote.notebooks.fetch();
             Nevernote.tags.fetch();
         }
     });
-    Nevernote.notes.remove(Nevernote.note);
-    Nevernote.note.set(Nevernote.notes.at(0).attributes);
+    Nevernote.notes.remove(Nevernote.currentNote);
+    Nevernote.currentNote.clear({silent: true});
+    Nevernote.currentNote.set({id: Nevernote.notes.at(0).get('id')}, {silent: true});
+    Nevernote.currentNote.fetch();
     this.leave();
   },
 

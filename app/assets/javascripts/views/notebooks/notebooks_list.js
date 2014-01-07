@@ -25,6 +25,7 @@ Nevernote.Views.NotebooksList = Support.CompositeView.extend({
   },
 
   show: function(event) {
+    var self = this;
     event.preventDefault();
     var notebook = Nevernote.notebooks.get($(event.currentTarget).attr('data-id'))
     Nevernote.currentNotebook = notebook;
@@ -41,13 +42,14 @@ Nevernote.Views.NotebooksList = Support.CompositeView.extend({
 
             Nevernote.notes.reset(notes);
             if (Nevernote.notes.at(0) !== undefined) {
-                Nevernote.note.set(Nevernote.notes.at(0).attributes);
+                self.switchCurrentNote(Nevernote.notes.at(0).get('id'));
             }
         }
     });
   },
 
   all: function(event) {
+    var self = this;
     event.preventDefault();
     Nevernote.currentNotebook = null;
 
@@ -55,12 +57,12 @@ Nevernote.Views.NotebooksList = Support.CompositeView.extend({
         var notes = Nevernote.currentTag.get('notes').models;
         Nevernote.notes.reset(notes);
         if (Nevernote.notes.at(0) !== undefined) {
-            Nevernote.note.set(Nevernote.notes.at(0).attributes);
+            self.switchCurrentNote(Nevernote.notes.at(0).get('id'));
         }
     } else {
         Nevernote.notes.fetch({
             success: function() {
-                Nevernote.note.set(Nevernote.notes.at(0).attributes);
+                self.switchCurrentNote(Nevernote.notes.at(0).get('id'));
             }
         });
     };
@@ -104,6 +106,12 @@ Nevernote.Views.NotebooksList = Support.CompositeView.extend({
     var container = $('#lightbox');
     container.html(view.render().$el)
     container.toggleClass('hide');
+  },
+
+  switchCurrentNote: function(noteId) {
+    Nevernote.currentNote.clear({silent: true});
+    Nevernote.currentNote.set({id: noteId}, {silent: true});
+    Nevernote.currentNote.fetch();
   }
 
 });

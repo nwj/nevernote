@@ -1,8 +1,9 @@
 <% if (Nevernote.notes.length > 0) { %>
+<% var note = Nevernote.currentNote %>
 <header class="note-toolbar group">
   <div class="notebook-selector">
     <div class="notebook-selector-button group">
-        <% var notebook_id = Nevernote.note.get('notebook_id') %>
+        <% var notebook_id = note.get('notebook_id') %>
         <h3>
             <%= Nevernote.notebooks.get(notebook_id).escape('name') %>
         </h3>
@@ -24,14 +25,14 @@
         </button>
         <ul class="note-info-dropdown hide">
             <li>
-                Title: <%= Nevernote.note.escape('title') %>
+                Title: <%= note.escape('title') %>
             </li>
             <li>
                 Notebook: <%= Nevernote.notebooks.get(notebook_id).escape('name') %>
             </li>
             <li>
                 URL:
-                <input type="text" name="url" value="<%= Nevernote.note.escape('url') %>">
+                <input type="text" name="url" value="<%= note.escape('url') %>">
             </li>
         </ul>
     </li>
@@ -47,12 +48,12 @@
 </header>
 <div class="note-content-wrapper">
     <section class="note-content">
-        <% var title = Nevernote.note.escape('title') %>
+        <% var title = note.escape('title') %>
         <div class="note-title">
             <h2><%= title %></h2>
             <input type="text" name="title" value="<%= title %>" class="input hide">
         </div>
-        <% var content = Nevernote.note.escape('content') %>
+        <% var content = note.escape('content') %>
         <div class="note-body">
             <p><%= content %></p>
             <p name="content" class="input hide" contenteditable="true">

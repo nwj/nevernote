@@ -1,17 +1,25 @@
 Nevernote.Views.Home = Support.CompositeView.extend({
   events: {
-    "click button#new-note": "newNote"
+    "click button#new-note": "createNote"
   },
 
-  newNote: function() {
+  createNote: function() {
     if (Nevernote.currentNotebook === null) {
-      var notebook = Nevernote.notebooks.findWhere({default: true});
+      var notebook = Nevernote.defaultNotebook;
     } else {
       var notebook = Nevernote.currentNotebook;
     }
 
-    Nevernote.notes.create({title: "Untitled", notebook_id: notebook.get('id')})
-    Nevernote.notebooks.fetch();
+    var newNote = Nevernote.notes.create({
+      title: "Untitled",
+      notebook_id: notebook.get('id')
+    }, {
+      success: function() {
+        Nevernote.currentNote.clear({silent: true});
+        Nevernote.currentNote.set(newNote.attributes);
+        Nevernote.notebooks.fetch();
+      }
+    });
   },
 
   render: function() {

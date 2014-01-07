@@ -2,9 +2,7 @@ Nevernote.Views.NoteDetail = Support.CompositeView.extend({
   initialize: function() {
     _.bindAll(this, "render");
 
-    this.bindTo(Nevernote.note, "add", this.render);
-    this.bindTo(Nevernote.note, "remove", this.render);
-    this.bindTo(Nevernote.note, "change", this.render);
+    this.bindTo(Nevernote.currentNote, "change", this.render);
 
     $(window).on('resize', function() {
       var windowHeight = $(window).height();
@@ -56,10 +54,10 @@ Nevernote.Views.NoteDetail = Support.CompositeView.extend({
   saveTitle: function(event) {
     var formData = $(event.target).serializeJSON();
 
-    Nevernote.note.save(formData, {
+    Nevernote.currentNote.save(formData, {
       wait: true,
       success: function() {
-        Nevernote.notes.add(Nevernote.note, {merge: true});
+        Nevernote.notes.fetch();
       }
     });
 
@@ -70,10 +68,10 @@ Nevernote.Views.NoteDetail = Support.CompositeView.extend({
   saveBody: function(event) {
     var formData = {content: $(event.target).html()}
 
-    Nevernote.note.save(formData, {
+    Nevernote.currentNote.save(formData, {
       wait: true,
       success: function() {
-        Nevernote.notes.add(Nevernote.note, {merge: true});
+        Nevernote.notes.fetch();
       }
     });
 
@@ -88,7 +86,7 @@ Nevernote.Views.NoteDetail = Support.CompositeView.extend({
   changeNotebook: function(event) {
     var new_notebook_id = $(event.currentTarget).attr('data-id');
 
-    Nevernote.note.save({notebook_id: new_notebook_id}, {
+    Nevernote.currentNote.save({notebook_id: new_notebook_id}, {
         success: function() {
             Nevernote.notebooks.fetch();
         }
