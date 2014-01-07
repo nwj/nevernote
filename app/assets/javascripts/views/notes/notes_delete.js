@@ -1,4 +1,4 @@
-Nevernote.Views.NoteDelete = Backbone.View.extend({
+Nevernote.Views.NoteDelete = Support.CompositeView.extend({
   id: "lightbox-dialog",
 
   events: {
@@ -23,9 +23,7 @@ Nevernote.Views.NoteDelete = Backbone.View.extend({
         }
     });
     Nevernote.notes.remove(Nevernote.currentNote);
-    Nevernote.currentNote.clear({silent: true});
-    Nevernote.currentNote.set({id: Nevernote.notes.at(0).get('id')}, {silent: true});
-    Nevernote.currentNote.fetch();
+    this.switchCurrentNote(Nevernote.notes.at(0).get('id'));
     this.leave();
   },
 

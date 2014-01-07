@@ -51,6 +51,5 @@ Nevernote.Views.Home = Support.CompositeView.extend({
     var view = new Nevernote.Views.NoteDetail();
     var container = this.$('#note-detail');
     this.renderChildInto(view, container);
-  }
-
+  },
 });
