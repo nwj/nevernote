@@ -53,7 +53,7 @@
             <h2><%= title %></h2>
             <input type="text" name="title" value="<%= title %>" class="input hide">
         </div>
-        <% var content = note.escape('content') %>
+        <% var content = note.get('content') %>
         <div class="note-body">
             <p><%= content %></p>
             <p name="content" class="input hide" contenteditable="true">

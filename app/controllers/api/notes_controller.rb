@@ -33,6 +33,9 @@ class Api::NotesController < ApplicationController
     @notebooks = current_user.notebooks.order(:name)
     @taggings = @note.taggings
 
+    clean = Sanitize.clean(params[:note][:content], Sanitize::Config::BASIC)
+    params[:note][:content] = clean
+
     if @note.update_attributes(params[:note])
       render :show
     else
