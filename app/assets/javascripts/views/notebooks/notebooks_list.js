@@ -42,7 +42,7 @@ Nevernote.Views.NotebooksList = Support.CompositeView.extend({
 
             Nevernote.notes.reset(notes);
             if (Nevernote.notes.at(0) !== undefined) {
-                self.switchCurrentNote(Nevernote.notes.at(0).get('id'));
+                self.switchCurrentNote();
             }
         }
     });
@@ -57,12 +57,12 @@ Nevernote.Views.NotebooksList = Support.CompositeView.extend({
         var notes = Nevernote.currentTag.get('notes').models;
         Nevernote.notes.reset(notes);
         if (Nevernote.notes.at(0) !== undefined) {
-            self.switchCurrentNote(Nevernote.notes.at(0).get('id'));
+            self.switchCurrentNote();
         }
     } else {
         Nevernote.notes.fetch({
             success: function() {
-                self.switchCurrentNote(Nevernote.notes.at(0).get('id'));
+                self.switchCurrentNote();
             }
         });
     };

@@ -22,6 +22,7 @@ Nevernote.Views.TagsList = Support.CompositeView.extend({
   },
 
   show: function(event) {
+    var self = this;
     event.preventDefault();
     var tag = Nevernote.tags.get($(event.currentTarget).attr('data-id'))
     Nevernote.currentTag = tag;
@@ -38,9 +39,7 @@ Nevernote.Views.TagsList = Support.CompositeView.extend({
 
             Nevernote.notes.reset(notes);
             if (Nevernote.notes.at(0) !== undefined) {
-                Nevernote.currentNote.clear({silent: true});
-                Nevernote.currentNote.set({id: Nevernote.notes.at(0).get('id')});
-                Nevernote.currentNote.fetch();
+                self.switchCurrentNote();
             }
         }
     });

@@ -23,7 +23,7 @@ Nevernote.Views.NoteDelete = Support.CompositeView.extend({
         }
     });
     Nevernote.notes.remove(Nevernote.currentNote);
-    this.switchCurrentNote(Nevernote.notes.at(0).get('id'));
+    this.switchCurrentNote();
     this.leave();
   },
 

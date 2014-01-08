@@ -43,12 +43,12 @@ Nevernote.Views.NotesList = Support.CompositeView.extend({
     if (Nevernote.currentNotebook === null) {
       Nevernote.notes.fetch({
         success: function() {
-          self.switchCurrentNote(Nevernote.notes.at(0).get('id'));
+          self.switchCurrentNote();
         }
       });
     } else {
       Nevernote.notes.reset(Nevernote.currentNotebook.get('notes').models);
-      self.switchCurrentNote(Nevernote.notes.at(0).get('id'));
+      self.switchCurrentNote();
     };
   },
 

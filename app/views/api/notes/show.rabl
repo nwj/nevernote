@@ -1,5 +1,5 @@
 object @note
-attributes :id, :title, :body, :url, :notebook_id
+attributes :id, :title, :content, :url, :notebook_id
 node :created_short do |n|
   n.created_at.strftime("%b %d, %Y")
 end
