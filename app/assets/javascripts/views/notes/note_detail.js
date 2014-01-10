@@ -20,7 +20,8 @@ Nevernote.Views.NoteDetail = Support.CompositeView.extend({
     "click .note-body > p" : "edit",
     "blur .note-body > .input" : "saveBody",
     "click .notebook-selector-button" : "selectNotebook",
-    "click .notebook-selector li" : "changeNotebook"
+    "click .notebook-selector li" : "changeNotebook",
+    "click .note-info-button" : "toggleInfo"
   },
 
   render: function() {
@@ -93,5 +94,9 @@ Nevernote.Views.NoteDetail = Support.CompositeView.extend({
     });
 
     $('.notebook-selector ul').toggleClass('hide');
+  },
+
+  toggleInfo: function(event) {
+    $('.note-info-dropdown').toggleClass('hide');
   }
 });

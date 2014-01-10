@@ -4,13 +4,13 @@ Nevernote.Models.Note = Backbone.Model.extend({
   parse: function(response) {
     response["notebooks"] = new Nevernote.Collections.Notebooks(
       response["notebooks"], {
-        url: "api/notebooks/" + response["id"],
+        url: "api/notebooks/"
       }
     );
 
-    response["taggings"] = new Nevernote.Collections.Taggings(
-      response["taggings"], {
-        url: "api/taggings/" + response["id"],
+    response["tags"] = new Nevernote.Collections.Tags(
+      response["tags"], {
+        url: "api/tags/"
       }
     );
 

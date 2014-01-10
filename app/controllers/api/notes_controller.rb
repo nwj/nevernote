@@ -11,7 +11,7 @@ class Api::NotesController < ApplicationController
   def show
     @note = Note.find(params[:id])
     @notebooks = current_user.notebooks.order(:name)
-    @taggings = @note.taggings
+    @tags = @note.tags
     render :show
   end
 

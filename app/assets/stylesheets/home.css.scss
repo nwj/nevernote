@@ -349,9 +349,9 @@ header.sub-header button {
   position: absolute;
   top: 30px;
   left: 50px;
-  background: #f4f6f7;
+  background: #f3f3f3;
   border: 1px solid #b5b5b5;
-  border-radius: 5px;
+  border-radius: 3px;
   padding: 5px 0;
 }
 
@@ -361,6 +361,38 @@ header.sub-header button {
 
 #note-detail .note-toolbar .notebook-selector ul li:hover {
   background: #d1d4d7;
+}
+
+#note-detail ul li.note-info {
+  position: relative
+}
+
+#note-detail ul.note-info-dropdown {
+  position: absolute;
+  top: 30px;
+  left: -200px;
+  width: 300px;
+  background: #f3f3f3;
+  border: 1px solid #b5b5b5;
+  border-radius: 3px;
+  padding: 5px 0;
+}
+
+#note-detail ul.note-info-dropdown li {
+  padding: 10px;
+}
+
+#note-detail ul.note-info-dropdown li h4 {
+  float: left;
+  margin: 0 10px 0 0;
+  font-size: 13px;
+  color: #7B7C7E;
+}
+
+#note-detail ul.note-info-dropdown li div {
+  float:left;
+  font-size: 13px;
+  color: #7B7C7E;
 }
 
 #note-detail .note-toolbar > ul {

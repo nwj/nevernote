@@ -3,14 +3,14 @@
 <header class="note-toolbar group">
   <div class="notebook-selector">
     <div class="notebook-selector-button group">
-        <% var notebook_id = note.get('notebook_id') %>
+        <% var parentNotebook = note.get('notebooks').where({parent: true})[0] %>
         <h3>
-            <%= Nevernote.notebooks.get(notebook_id).escape('name') %>
+            <%= parentNotebook.escape('name') %>
         </h3>
         <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAHCAYAAAArkDztAAAAQklEQVR42mNgwAXq6+vn1NXVOcL4IHZDQ8NcBiARBsRvgQrMamtrTUFsoGQ4TFUyUOAlCAMVpKAYCZQsBAoWMZANADXWH/e+NBrMAAAAAElFTkSuQmCC">
     </div>
     <ul class="hide">
-        <% Nevernote.notebooks.each(function(notebook) { %>
+        <% note.get('notebooks').each(function(notebook) { %>
             <li data-id="<%= notebook.get('id') %>">
                 <%= notebook.escape('name') %>
             </li>
@@ -18,21 +18,27 @@
     </ul>
   </div>
   <ul class="group">
-    <li>
-        <button class="note-info group">
+    <li class="note-info">
+        <button class="note-info-button group">
             <h3>Info</h3>
             <div class="info"></div>
         </button>
         <ul class="note-info-dropdown hide">
-            <li>
-                Title: <%= note.escape('title') %>
+            <li class="group">
+                <h4>Title:</h4>
+                <div><%= note.escape('title') %></div>
             </li>
-            <li>
-                Notebook: <%= Nevernote.notebooks.get(notebook_id).escape('name') %>
+            <li class="group">
+                <h4>Notebook:</h4>
+                <div><%= parentNotebook.escape('name') %></div>
             </li>
-            <li>
-                URL:
-                <input type="text" name="url" value="<%= note.escape('url') %>">
+            <li class="group">
+                <h4>Created:</h4>
+                <div><%= note.get('created_long') %></div>
+            </li>
+            <li class="group">
+                <h4>Modified:</h4>
+                <div><%= note.get('modified_long') %></div>
             </li>
         </ul>
     </li>
@@ -43,8 +49,6 @@
         </button>
     </li>
   </ul>
-</header>
-<header class="note-sub-toolbar">
 </header>
 <div class="note-content-wrapper">
     <section class="note-content">
