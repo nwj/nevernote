@@ -16,7 +16,7 @@ Nevernote.Views.NotesList = Support.CompositeView.extend({
 
   events: {
     "click .show" : "show",
-    "click .current-tag > button" : "removeTag"
+    "click .tag > button" : "removeTag"
   },
 
   render: function() {
