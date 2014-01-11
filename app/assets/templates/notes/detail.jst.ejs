@@ -1,9 +1,11 @@
 <% if (Nevernote.notes.length > 0) { %>
+
 <% var note = Nevernote.currentNote %>
+<% var parentNotebook = note.get('notebooks').where({parent: true})[0] %>
+
 <header class="note-toolbar group">
   <div class="notebook-selector">
     <div class="notebook-selector-button group">
-        <% var parentNotebook = note.get('notebooks').where({parent: true})[0] %>
         <h3>
             <%= parentNotebook.escape('name') %>
         </h3>
@@ -16,6 +18,9 @@
             </li>
         <% }) %>
     </ul>
+  </div>
+  <div class="new-tag">
+    <input type="text" name="tag_name"></input>
   </div>
   <ul class="tags group">
     <% note.get('taggings').each(function(tag) { %>

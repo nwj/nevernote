@@ -22,7 +22,8 @@ Nevernote.Views.NoteDetail = Support.CompositeView.extend({
     "click .notebook-selector-button" : "selectNotebook",
     "click .notebook-selector li" : "changeNotebook",
     "click .note-info-button" : "toggleInfo",
-    "click .remove-tag" : "removeTag"
+    "click .remove-tag" : "removeTag",
+    "blur .new-tag > input" : "addTag"
   },
 
   render: function() {
@@ -103,5 +104,16 @@ Nevernote.Views.NoteDetail = Support.CompositeView.extend({
 
   removeTag: function(event) {
     console.log('click');
+  },
+
+  addTag: function(event) {
+    var formData = $(event.target).serializeJSON();
+    formData['note_id'] = Nevernote.currentNote.get('id');
+    Nevernote.currentNote.get('taggings').create(formData, {
+      success: function() {
+        Nevernote.tags.fetch();
+        Nevernote.currentNote.fetch();
+      }
+    });
   }
 });

@@ -20,7 +20,7 @@ class Api::TaggingsController < ApplicationController
     @tagging = Tagging.create(note_id: @note.id, tag_id: @tag.id)
 
     if @tagging.save
-      render "api/taggings/show"
+      render :index
     else
       render json: @tagging.errors.full_messages
     end
