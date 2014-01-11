@@ -23,10 +23,10 @@
     <input type="text" name="tag_name"></input>
   </div>
   <ul class="tags group">
-    <% note.get('taggings').each(function(tag) { %>
+    <% note.get('taggings').each(function(tagging) { %>
     <li class="tag group">
-        <h2><%= tag.escape('tag_name') %></h2>
-        <button class="remove-tag">x</button>
+        <h2><%= tagging.escape('tag_name') %></h2>
+        <button class="remove-tag" data-id="<%= tagging.id %>">x</button>
     </li>
     <% }) %>
   </ul>

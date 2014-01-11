@@ -31,6 +31,6 @@ class Api::TaggingsController < ApplicationController
 
     @tagging.destroy
 
-    render json: "Note untagged."
+    render json: @tagging
   end
 end

@@ -103,7 +103,15 @@ Nevernote.Views.NoteDetail = Support.CompositeView.extend({
   },
 
   removeTag: function(event) {
-    console.log('click');
+    var id = $(event.target).attr('data-id');
+    var tagging = Nevernote.currentNote.get('taggings').get(id);
+    tagging.url = tagging.url + tagging.get('id');
+    tagging.destroy({
+      success: function() {
+        Nevernote.tags.fetch();
+        Nevernote.currentNote.fetch();
+      }
+    });
   },
 
   addTag: function(event) {
