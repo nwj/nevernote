@@ -5,7 +5,7 @@ Nevernote::Application.routes.draw do
     resources :notebooks, except: [:new, :edit]
     resources :tags, except: [:new, :edit]
     resources :notes, except: [:new, :edit] do
-      resources :taggings, only: [:create, :destroy]
+      resources :taggings, only: [:index, :create, :destroy]
     end
   end
 

@@ -21,7 +21,8 @@ Nevernote.Views.NoteDetail = Support.CompositeView.extend({
     "blur .note-body > .input" : "saveBody",
     "click .notebook-selector-button" : "selectNotebook",
     "click .notebook-selector li" : "changeNotebook",
-    "click .note-info-button" : "toggleInfo"
+    "click .note-info-button" : "toggleInfo",
+    "click .remove-tag" : "removeTag"
   },
 
   render: function() {
@@ -98,5 +99,9 @@ Nevernote.Views.NoteDetail = Support.CompositeView.extend({
 
   toggleInfo: function(event) {
     $('.note-info-dropdown').toggleClass('hide');
+  },
+
+  removeTag: function(event) {
+    console.log('click');
   }
 });

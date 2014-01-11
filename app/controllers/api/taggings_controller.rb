@@ -1,7 +1,13 @@
 class Api::TaggingsController < ApplicationController
 
   before_filter { |c| c.require_ownership("Note", params[:note_id]) }
-  before_filter(except: [:create]) { |c| c.require_ownership("Tagging") }
+
+  def index
+    note = Note.find(params[:note_id])
+    @taggings = note.taggings
+
+    render :index
+  end
 
   def create
     @note = Note.find(params[:note_id])

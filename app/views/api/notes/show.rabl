@@ -18,6 +18,9 @@ child(@notebooks) do
     @note.notebook == n
   end
 end
-child(@tags) do
-  attributes :id, :name
+child(@taggings) do
+  attributes :id, :tag_id, :note_id
+  node :tag_name do |t|
+    t.tag.name
+  end
 end

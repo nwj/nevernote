@@ -9,8 +9,8 @@
   <% } %>
   </div>
   <% if (Nevernote.currentTag !== null) { %>
-    <div class="current-tag group">
-        <h2><%= Nevernote.currentTag.escape('name') %></h1>
+    <div class="tag group">
+        <h2><%= Nevernote.currentTag.escape('name') %></h2>
         <button class="remove-current-tag">X</button>
     </div>
   <% } %>

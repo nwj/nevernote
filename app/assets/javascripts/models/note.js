@@ -8,9 +8,9 @@ Nevernote.Models.Note = Backbone.Model.extend({
       }
     );
 
-    response["tags"] = new Nevernote.Collections.Tags(
-      response["tags"], {
-        url: "api/tags/"
+    response["taggings"] = new Nevernote.Collections.Taggings(
+      response["taggings"], {
+        url: "api/notes/" + response["id"] + "/taggings/"
       }
     );
 

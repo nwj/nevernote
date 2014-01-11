@@ -3,7 +3,31 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-#content { border-bottom: 1px solid #b3b3b3;
+#content { 
+  border-bottom: 1px solid #b3b3b3;
+}
+
+.tag {
+  display: block;
+  background: #cddde5;
+  padding: 2px 10px;
+  border-radius: 10px;
+  margin-right: 5px;
+}
+
+.tag > h2 {
+  float: left;
+  font-size: 12px;
+  color: #6a6a6a;
+  margin-right: 5px;
+}
+
+.tag > button {
+  float: left;
+  font-size: 12px;
+  color: #6a6a6a;
+  background: none;
+  padding: 0;
 }
 
 /*Main Header*/
@@ -243,27 +267,9 @@ header.sub-header button {
   color: #6a6a6a;
 }
 
-#notes-list header .current-tag {
+#notes-list header .tag {
   float: left;
   margin-left: 15px;
-  background: #cddde5;
-  padding: 2px 10px;
-  border-radius: 10px;
-
-}
-
-#notes-list header .current-tag h2 {
-  float: left;
-  font-size: 12px;
-  color: #6a6a6a;
-  margin-right: 5px;
-}
-
-#notes-list header .current-tag button {
-  float: left;
-  font-size: 12px;
-  color: #6a6a6a;
-  background: none;
 }
 
 #notes-list ul {
@@ -363,6 +369,12 @@ header.sub-header button {
   background: #d1d4d7;
 }
 
+#note-detail .note-toolbar .tags {
+  padding: 10px;
+  margin-left: 10px;
+  float: left;
+}
+
 #note-detail ul li.note-info {
   position: relative
 }
@@ -403,7 +415,7 @@ header.sub-header button {
   float: left;
 }
 
-#note-detail .note-toolbar button {
+#note-detail .note-toolbar .note-actions button {
   color: #7A7D81;
   font-size: 12px;
   text-transform: uppercase;

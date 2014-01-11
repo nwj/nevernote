@@ -17,7 +17,15 @@
         <% }) %>
     </ul>
   </div>
-  <ul class="group">
+  <ul class="tags group">
+    <% note.get('taggings').each(function(tag) { %>
+    <li class="tag group">
+        <h2><%= tag.escape('tag_name') %></h2>
+        <button class="remove-tag">x</button>
+    </li>
+    <% }) %>
+  </ul>
+  <ul class="note-actions group">
     <li class="note-info">
         <button class="note-info-button group">
             <h3>Info</h3>
