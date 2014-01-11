@@ -9,7 +9,7 @@ Nevernote.Views.NoteDetail = Support.CompositeView.extend({
       var windowWidth = $(window).width();
       $('#note-detail').height(windowHeight - 86);
       $('#note-detail').width(windowWidth - 596);
-      $('.note-content-wrapper').height(windowHeight - 123);
+      $('.note-content-wrapper').height(windowHeight - 128);
     });
   },
 
@@ -34,7 +34,7 @@ Nevernote.Views.NoteDetail = Support.CompositeView.extend({
       var windowWidth = $(window).width();
       $('#note-detail').height(windowHeight - 86);
       $('#note-detail').width(windowWidth - 615);
-      $('.note-content-wrapper').height(windowHeight - 123);
+      $('.note-content-wrapper').height(windowHeight - 128);
     }, 0);
 
     return this;

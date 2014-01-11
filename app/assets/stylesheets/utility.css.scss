@@ -34,6 +34,10 @@ img {
   display: block;
 }
 
+button:hover {
+  cursor: pointer;
+}
+
 /* Helper methods (clearfix) */
 
 .group:after {

@@ -43,6 +43,10 @@ header.header .account-button {
   position: relative;
 }
 
+header.header .account-button:hover {
+  cursor: pointer;
+}
+
 header.header .on {
   background: #439228;
 }
@@ -77,6 +81,7 @@ header.header ul.account-menu {
   border-bottom: 1px solid #b5b5b5;
   width: 150px;
   border-radius: 3px;
+  z-index: 2;
 }
 
 header.header ul.account-menu li a:hover {
@@ -339,6 +344,7 @@ header.sub-header button {
 
 #note-detail .notebook-selector-button:hover {
   color: #525f67;
+  cursor: pointer;
 }
 
 #note-detail .notebook-selector-button h3 {
@@ -367,6 +373,7 @@ header.sub-header button {
 
 #note-detail .note-toolbar .notebook-selector ul li:hover {
   background: #d1d4d7;
+  cursor: pointer;
 }
 
 #note-detail .new-tag {
