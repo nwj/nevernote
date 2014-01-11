@@ -1,3 +1,97 @@
 // Place all the styles related to the About controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+  background: #E6EAEB;
+}
+header.header {
+  background: #4CA52E;
+}
+
+header.header a {
+  display: block;
+}
+
+header.header a .logo-image {
+  float: left;
+  width: 46px;
+  height: 46px;
+  overflow: hidden;
+  padding: 3px;
+}
+
+header.header a .logo-text {
+  float: left;
+  height: 26px;
+  font-size: 20px;
+  padding-top: 15px;
+  color: white;
+}
+
+section.main {
+    width:736px;
+    padding: 32px;
+    margin: 32px auto;
+    border: solid 1px #bdbdbd;
+    background: white;
+}
+
+section.main header h1 {
+    font-size: 28px;
+    padding-bottom: 16px;
+    border-bottom: solid 1px #bdbdbd;
+    margin-bottom: 30px;
+}
+
+section.main div.about-content {
+  font-size: 18px;
+  font-family: sans-serif;
+  line-height: 28px;
+}
+
+section.main div.about-content p {
+  margin-bottom: 10px;
+}
+
+section.main div.about-content ul {
+  list-style: disc inside;
+  margin-bottom: 10px;
+}
+
+footer.footer {
+    width: 736px;
+    padding: 0 32px 10px 32px;
+    margin: auto;
+}
+
+footer.footer nav ul {
+    list-style: none;
+    width: 200px;
+    margin: auto;
+}
+
+footer.footer nav ul li {
+    float: left;
+    font-size: 11px;
+    color: #ababab;
+}
+
+footer.footer nav ul li:after {
+    content: "|";
+    margin: 15px;
+}
+
+footer.footer nav ul li:last-child:after {
+    content: "";
+    padding: 0;
+}
+
+footer.footer nav ul li a {
+    font-size: 11px;
+    color: #ababab;
+}
+
+footer.footer nav ul li a:hover {
+    color: #4a8db8;
+}
