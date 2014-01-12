@@ -136,6 +136,11 @@ section.main .sign-in input:last-child {
 
 section.main .sign-in input:last-child:hover {
     background: #569720;
+    cursor: pointer;
+}
+
+section.main .sign-in .divider {
+    margin-bottom: 16px;
 }
 
 footer.footer {

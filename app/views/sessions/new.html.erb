@@ -79,6 +79,19 @@
 
         <input type="submit" value="Sign In">
         </form>
+        <div class="divider">
+        - or -
+        </div>
+        <form action="<%= session_url %>" method="post">
+            <input
+                type="hidden"
+                name="authenticity_token"
+                value="<%= form_authenticity_token %>"
+            >
+            <input type="hidden" name="email_or_username" value="Jane">
+            <input type="hidden" name="password" value="password">
+            <input id="demo" type="submit" value="Try the Demo">
+        </form>
     </div>
 </section>
 <footer class="footer">

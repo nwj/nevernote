@@ -49,3 +49,20 @@ button:hover {
 .hide {
   display: none;
 }
+
+/* Demo Login Button */
+#demo {
+  height: auto;
+  width: auto;
+  padding: 12px 32px;
+  background: #4CA52E;
+  border: solid 1px #4c881d;
+  color: white;
+  font-size: 14px;
+  border-radius: 3px;
+}
+
+#demo:hover {
+  background: #569720;
+  cursor: pointer;
+}

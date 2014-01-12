@@ -21,6 +21,16 @@
         <p>
             Nevernote makes modern life manageable, by letting you easily collect and find everything that matters.
         </p>
+        <form action="<%= session_url %>" method="post">
+            <input
+                type="hidden"
+                name="authenticity_token"
+                value="<%= form_authenticity_token %>"
+            >
+            <input type="hidden" name="email_or_username" value="Jane">
+            <input type="hidden" name="password" value="password">
+            <input id="demo" type="submit" value="Try the Demo">
+        </form>
     </div>
     <img id="book" src="http://evernote.com/media/img/homepage-redesign/main-image/travel-books.png">
     <img id="pen" src="http://evernote.com/media/img/homepage-redesign/main-image/travel-pen.png">
