@@ -1,7 +1,7 @@
 #Nevernote
 ###by nwj
 
-Nevernote is a clone of the popular note taking app, [Evernote](http://evernote.com/). I wrote it primarily to practice building a one-page app in Backbone.js. A live demo of Nevernote is available [here](http://nevernote-nwj.herokuapp.com).
+Nevernote is a clone of the popular note taking app, [Evernote](http://evernote.com/). I wrote it as my final project for App Academy back in 2013. It is unmaintained at this point in time. I keep it around mostly as a object of personal interest.
 
 ###Built with:
 * Ruby on Rails
